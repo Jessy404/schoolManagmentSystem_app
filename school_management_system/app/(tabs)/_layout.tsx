@@ -4,31 +4,59 @@ import React from 'react';
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
-
+import { Ionicons,FontAwesome , FontAwesome6,AntDesign , Feather} from '@expo/vector-icons'; // استيراد FontAwesome
 export default function TabLayout() {
   const colorScheme = useColorScheme();
 
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: Colors[colorScheme ?? 'dark'].tint,
         headerShown: false,
       }}>
       <Tabs.Screen
-        name="index"
+        name="home"
         options={{
+          tabBarActiveTintColor: "#148B9C",
+          tabBarInactiveTintColor: "#3A3535",
           title: 'Home',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
+            <AntDesign name="home" color={color} size={25} />
           ),
         }}
       />
       <Tabs.Screen
         name="explore"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+           tabBarStyle: { display: 'flex' } ,
+          tabBarActiveTintColor: "#148B9C",
+          tabBarInactiveTintColor: "#3A3535",
+          title: 'Announcement',
+          tabBarIcon: ({ color }) => (
+            <FontAwesome6 name ="medapps" color={color} size={25} />
+          ),
+     
+        }}
+      />
+      <Tabs.Screen
+        name="community"
+        options={{
+          tabBarActiveTintColor: "#148B9C",
+          tabBarInactiveTintColor: "#3A3535",
+          title: 'Community',
+          tabBarIcon: ({ color }) => (
+            <Feather name="users" color={color} size={25} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="courses"
+        options={{
+                 tabBarActiveTintColor: "#148B9C",
+          tabBarInactiveTintColor: "#3A3535",
+          title: 'Courses',
+          tabBarIcon: ({ color }) => (
+            <FontAwesome name="book" color={color} size={25} />
           ),
         }}
       />
