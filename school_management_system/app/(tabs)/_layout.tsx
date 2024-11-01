@@ -4,7 +4,7 @@ import React from 'react';
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
-import { Ionicons,FontAwesome , FontAwesome6,AntDesign} from '@expo/vector-icons'; // استيراد FontAwesome
+import { Ionicons,FontAwesome , FontAwesome6,AntDesign , Feather} from '@expo/vector-icons'; // استيراد FontAwesome
 export default function TabLayout() {
   const colorScheme = useColorScheme();
 
@@ -32,7 +32,7 @@ export default function TabLayout() {
           tabBarActiveTintColor: "#148B9C",
           tabBarInactiveTintColor: "#3A3535",
           title: 'Announcement',
-          tabBarIcon: ({ color, focused }) => (
+          tabBarIcon: ({ color }) => (
             <FontAwesome6 name ="medapps" color={color} size={25} />
           ),
      
@@ -45,7 +45,7 @@ export default function TabLayout() {
           tabBarInactiveTintColor: "#3A3535",
           title: 'Community',
           tabBarIcon: ({ color }) => (
-            <FontAwesome6 name="users-between-lines" color={color} size={25} />
+            <Feather name="users" color={color} size={25} />
           ),
         }}
       />
@@ -56,7 +56,7 @@ export default function TabLayout() {
           tabBarInactiveTintColor: "#3A3535",
           title: 'Courses',
           tabBarIcon: ({ color }) => (
-            <FontAwesome name="book" color={color} size={30} />
+            <FontAwesome name="book" color={color} size={25} />
           ),
         }}
       />

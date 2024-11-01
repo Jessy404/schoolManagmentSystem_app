@@ -34,11 +34,12 @@ export default function Login() {
   };
 
   if (!fontLoaded) {
-    return <Text>Loading fonts...</Text>; // عرض نص أثناء تحميل الخط
+    return <Text>Loading fonts...</Text>; 
   }
 
   return (
-    <View>
+  
+    <View   style={styles.container2} >
       <View style={styles.container}>
         <View style={styles.circle} />
       </View>
@@ -52,16 +53,16 @@ export default function Login() {
             value={email}
             onChangeText={setEmail}
           />
-          <AntDesign name="user" color={"black"} size={30} style={styles.icon1} />
+          <Feather name="user" color={"black"} size={24} style={styles.icon1} />
           <TextInput
             style={styles.input}
-            placeholder=" Password "
+            placeholder=" Password " 
             placeholderTextColor="#3A3535"
             value={password}
             onChangeText={setPassword}
             secureTextEntry
           />
-          <AntDesign name="lock" color={"black"} size={27} style={styles.icon2} />
+          <Feather name="lock" color={"black"} size={24} style={styles.icon2} />
         </View>
         <View style={styles.buttonView}>
           <Pressable style={styles.button} onPress={handelSignin}>
@@ -81,14 +82,21 @@ const styles = StyleSheet.create({
   },
   icon1: {
     position: 'absolute',
-    left: 50,
-    top: 10,
+    left: 53,
+    top: 12,
+ 
   },
   icon2: {
     position: 'absolute',
-    left: 50,
-    top: 85,
+    left: 53,
+    top: 88,
   
+  },
+  container2: {
+    // alignItems: "center",
+    // justifyContent: "center",
+    flex: 1,
+    backgroundColor: '#FFFFFF',
   },
   container: {
     alignItems: "center",
@@ -107,8 +115,10 @@ const styles = StyleSheet.create({
     top: 291,
     position: 'absolute',
     gap: 20,
-    shadowColor: "rgba(0, 0, 0, 0.25)",
+    shadowColor: "#00000040",
     borderRadius: 30,
+    shadowOpacity :'#00000040',
+    elevation: 20,
   },
   inputView: {
     gap: 20,
@@ -124,19 +134,27 @@ const styles = StyleSheet.create({
     paddingHorizontal: 50,
     borderColor: "#3A3535",
     borderWidth: 0.5,
-    borderRadius: 20
+    borderRadius: 20,
+
+    fontfamily: 'Roboto',
+fontstyle: "normal",
+fontweight: 400,
+fontsize: 16,
+lineheight: 19,
   },
   title: {
     position: 'absolute',
-    fontSize: moderateScale(28),
-    fontWeight: '700',
+    fontSize: moderateScale(35),
     color: "#148B9C",
     width: width * 0.3,
     height: height * 0.4,
     alignItems: 'center',
-    fontFamily: "Outfit", // استخدام الخط هنا بعد التأكد من تحميله
+    fontFamily: "Outfit",
     lineHeight: 50,
+    fontStyle: 'normal', 
+    fontWeight: 'bold', 
   },
+
   button: {
     position: 'relative',
     backgroundColor: "#148B9C",
