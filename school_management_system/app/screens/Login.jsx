@@ -3,7 +3,7 @@ import { Text, View } from 'react-native';
 import { Stack, router } from 'expo-router';
 import { useState, useEffect } from 'react';
 import * as Font from 'expo-font'; // احرص على استيرادها هنا
-import Feather from 'react-native-vector-icons/Feather'; 
+import Feather from 'react-native-vector-icons/Feather';
 import { AntDesign } from '@expo/vector-icons';
 const { width, height } = Dimensions.get('window');
 const guidelineBaseWidth = 350;
@@ -34,14 +34,18 @@ export default function Login() {
   };
 
   if (!fontLoaded) {
-    return <Text>Loading fonts...</Text>; 
+    return <Text>Loading fonts...</Text>;
   }
 
   return (
-  
-    <View   style={styles.container2} >
+
+    <View style={styles.container2} >
       <View style={styles.container}>
+
         <View style={styles.circle} />
+        <Text style={styles.title1} >
+          School Team
+        </Text>
       </View>
       <View style={styles.container1}>
         <Text style={styles.title}> Login </Text>
@@ -56,7 +60,7 @@ export default function Login() {
           <Feather name="user" color={"black"} size={24} style={styles.icon1} />
           <TextInput
             style={styles.input}
-            placeholder=" Password " 
+            placeholder=" Password "
             placeholderTextColor="#3A3535"
             value={password}
             onChangeText={setPassword}
@@ -84,13 +88,13 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left: 53,
     top: 12,
- 
+
   },
   icon2: {
     position: 'absolute',
     left: 53,
     top: 88,
-  
+
   },
   container2: {
     // alignItems: "center",
@@ -117,30 +121,32 @@ const styles = StyleSheet.create({
     gap: 20,
     shadowColor: "#00000040",
     borderRadius: 30,
-    shadowOpacity :'#00000040',
+    shadowOpacity: '#00000040',
     elevation: 20,
   },
   inputView: {
     gap: 20,
-    width: width*0.8,
+    width: width * 0.85,
     // height : height*0.05,
     backgroundColor: '#FFFFFF',
     paddingHorizontal: 40,
     marginBottom: 5
-    
+
   },
   input: {
     height: 55,
-    paddingHorizontal: 50,
-    borderColor: "#3A3535",
-    borderWidth: 0.5,
+    // width : 250 ,
+    paddingHorizontal: 40,
+    borderColor: "#0A505B",
+    borderWidth: 2,
     borderRadius: 20,
-
+    padding: 15,
     fontfamily: 'Roboto',
-fontstyle: "normal",
-fontweight: 400,
-fontsize: 16,
-lineheight: 19,
+    fontstyle: "normal",
+    fontweight: 400,
+    fontsize: 16,
+    lineheight: 10,
+    flexdirection : 'row',
   },
   title: {
     position: 'absolute',
@@ -151,9 +157,25 @@ lineheight: 19,
     alignItems: 'center',
     fontFamily: "Outfit",
     lineHeight: 50,
-    fontStyle: 'normal', 
-    fontWeight: 'bold', 
+    fontStyle: 'normal',
+    fontWeight: 'bold',
   },
+  title1: {
+    position: 'absolute',
+    fontSize: moderateScale(48),
+    width: 360,
+    height: 60,
+    left: 38,
+    alignContent :'center',
+    top: 90,
+    alignItems: 'center',
+    fontFamily: "Outfit",
+    lineHeight: 60,
+    fontStyle: 'normal',
+    fontWeight: '400',
+    color: "#000000",
+  },
+
 
   button: {
     position: 'relative',
