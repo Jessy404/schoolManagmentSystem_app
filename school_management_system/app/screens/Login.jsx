@@ -18,6 +18,7 @@ const moderateScale = (size, factor = 0.5) => size + (scale(size) - size) * fact
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false); 
   const [fontLoaded, setFontLoaded] = useState(false); // إضافة حالة تحميل الخط
 
   useEffect(() => {
@@ -35,6 +36,10 @@ export default function Login() {
     router.replace('../(tabs)/courses');
   };
 
+  
+  const handellock = () => {
+    setShowPassword(!showPassword); // تبديل حالة رؤية كلمة المرور
+  };
   if (!fontLoaded) {
     return <Text>Loading fonts...</Text>;
   }
@@ -52,7 +57,7 @@ export default function Login() {
       <KeyboardAvoidingView
         behavior="padding"
         style={{ flex: 1 }}
-        keyboardVerticalOffset={-100} // جرب تغيير هذه القيمة حسب الحاجة
+        keyboardVerticalOffset={-100}
       >
         <View style={styles.container1}>
           <Text style={styles.title}> Login </Text>
@@ -71,9 +76,16 @@ export default function Login() {
               placeholderTextColor="#3A3535"
               value={password}
               onChangeText={setPassword}
-              secureTextEntry
+              secureTextEntry={!showPassword} 
             />
-            <EvilIcons name="lock" color={"black"} size={28} style={styles.icon2} />
+            <Pressable onPress={handellock}>
+              <EvilIcons
+                name={showPassword ? "unlock" : "lock"} // تبديل الأيقونة بناءً على حالة showPassword
+                color={"black"}
+                size={28}
+                style={styles.icon2}
+              />
+            </Pressable>
           </View>
           <View style={styles.buttonView}>
             <Pressable style={styles.button} onPress={handelSignin}>
@@ -94,13 +106,15 @@ const styles = StyleSheet.create({
   },
   icon1: {
     position: 'absolute',
-    left: 30, // تعديل الموضع ليكون الأيقونة قريبة من الحافة اليسرى
-    top: height * 0.03, // ضبط المسافة من الأعلى بحيث تكون الأيقونة بمحاذاة النص
+    left: 30, 
+    top: height * 0.03, 
   },
   icon2: {
     position: 'absolute',
-    left: 30,
-    top:height * 0.109, // تغيير المسافة من الأعلى لضمان محاذاة الأيقونة مع النص داخل الحقل الثاني
+    // left: 30,
+    // top: height * 0.113, 
+    marginTop : -50 ,
+  marginLeft : -10 ,
   },
   container2: {
     // alignItems: "center",
@@ -120,7 +134,7 @@ const styles = StyleSheet.create({
     paddingTop: 40,
     marginTop: -120,
     backgroundColor: '#FFFFFF',
-    height: height * 0.39,
+    height: height * 0.4,
     width: width * 0.8,
     left: 40,
     // top: height * 0.000001,
@@ -196,7 +210,6 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     alignItems: "center",
     justifyContent: "center",
-  
     // marginBottom: 15,
   },
   buttonText: {
@@ -206,16 +219,13 @@ const styles = StyleSheet.create({
   },
   buttonView: {
     backgroundColor: '#FFFFFF',
-    
-    top : 10 ,
-    
-
+    bottom: -40,
   },
   circle: {
     width: width,
     height: 430,
     borderBottomLeftRadius: 200,
-    borderBottomRightRadius: 200,
+    borderBottomRightRadius: 280,
     backgroundColor: '#E5FCFF',
     position: 'absolute',
     top: 0,
