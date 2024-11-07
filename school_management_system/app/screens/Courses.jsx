@@ -1,6 +1,7 @@
 import React from 'react'
 import { Text } from 'react-native'
-export default function Community() {
+export default function Courses() {
   return (
-  <Text> Community </Text>  )
+    <Text>Courses</Text>
+  )
 }
