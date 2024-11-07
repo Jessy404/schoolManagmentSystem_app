@@ -1,9 +1,8 @@
 import React from 'react'
-import Login from "../Account/login"
-
-export default function Loginn() {
+import Community from"../screens/Community"
+export default function cCommunity() {
   return (
-    <Login/>
+    <Community/>
   
   )
 }

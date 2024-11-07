@@ -26,7 +26,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="announcement"
         options={{
            tabBarStyle: { display: 'flex' } ,
           tabBarActiveTintColor: "#148B9C",

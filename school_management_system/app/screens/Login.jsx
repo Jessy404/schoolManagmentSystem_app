@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, TextInput, Dimensions } from 'react-native';
+import { Pressable, StyleSheet, TextInput, Dimensions, KeyboardAvoidingView, Platform ,ScrollView} from 'react-native';
 import { Text, View } from 'react-native';
 import { Stack, router } from 'expo-router';
 import { useState, useEffect } from 'react';
@@ -39,14 +39,24 @@ export default function Login() {
 
   return (
 
-    <View style={styles.container2} >
+    <View style={styles.container2} >  
+
+  
+
       <View style={styles.container}>
 
         <View style={styles.circle} />
+        
         <Text style={styles.title1} >
           School Team
         </Text>
       </View>
+      <KeyboardAvoidingView
+  behavior={Platform.OS === "ios" ? "padding" : "padding"} // استخدم "padding" للأندرويد
+  style={{ flex: 1 }}
+  keyboardVerticalOffset={Platform.OS === "android" ? 100 : 0} // جرب 100 أو 120 للأندرويد
+>
+
       <View style={styles.container1}>
         <Text style={styles.title}> Login </Text>
         <View style={styles.inputView}>
@@ -73,7 +83,9 @@ export default function Login() {
             <Text style={styles.buttonText}>Login</Text>
           </Pressable>
         </View>
-      </View>
+      </View> 
+
+      </KeyboardAvoidingView>
     </View>
   );
 }
@@ -109,24 +121,27 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
   },
   container1: {
-    alignItems: "center",
-    justifyContent: "center",
-    paddingTop: 70,
-    backgroundColor: '#FFFFFF',
-    height: 350,
-    width: width * 0.8,
-    left: 40,
-    top: 291,
-    position: 'absolute',
-    gap: 20,
-    shadowColor: "#00000040",
-    borderRadius: 30,
-    shadowOpacity: '#00000040',
-    elevation: 20,
-  },
+  alignItems: "center",
+  justifyContent: "center",
+  paddingTop: 70,
+  backgroundColor: '#FFFFFF',
+  height: 350,
+  width: width * 0.8,
+  left: 40,
+  top: -80,
+  position: 'absolute',
+  gap: 10,
+  shadowColor: "#000000", // لون الظل بدون الشفافية
+  shadowOpacity: 0.25,     // قيمة رقمية بين 0 و1
+  shadowOffset: { width: 0, height: 4 }, // اختياري: لضبط موضع الظل
+  shadowRadius: 5,         // اختياري: لضبط انتشار الظل
+  elevation: 20,           // لتفعيل الظل على Android
+  borderRadius: 30,
+},
+
   inputView: {
     gap: 20,
-    width: width * 0.85,
+    width: width * 0.80,
     // height : height*0.05,
     backgroundColor: '#FFFFFF',
     paddingHorizontal: 40,
@@ -167,7 +182,7 @@ const styles = StyleSheet.create({
     height: 60,
     left: 38,
     alignContent :'center',
-    top: 90,
+    top: 60,
     alignItems: 'center',
     fontFamily: "Outfit",
     lineHeight: 60,

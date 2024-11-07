@@ -1,9 +1,8 @@
 import React from 'react'
-import Login from "../Account/login"
-
-export default function Loginn() {
+import Courses from "../screens/Courses"
+export default function Course() {
   return (
-    <Login/>
-  
+  <Courses/>
   )
 }
+
