@@ -4,6 +4,8 @@ import { Stack, router } from 'expo-router';
 import { useState, useEffect } from 'react';
 import * as Font from 'expo-font'; // احرص على استيرادها هنا
 import Feather from 'react-native-vector-icons/Feather';
+import EvilIcons from 'react-native-vector-icons/EvilIcons';
+
 import { AntDesign } from '@expo/vector-icons';
 const { width, height } = Dimensions.get('window');
 const guidelineBaseWidth = 350;
@@ -47,38 +49,38 @@ export default function Login() {
           School Team
         </Text>
       </View>
-      <KeyboardAvoidingView 
-  behavior="padding" 
-  style={{ flex: 1 }} 
-  keyboardVerticalOffset={-110} // جرب تغيير هذه القيمة حسب الحاجة
->
-      <View style={styles.container1}>
-        <Text style={styles.title}> Login </Text>
-        <View style={styles.inputView}>
-          <TextInput
-            style={styles.input}
-            placeholder="Email "
-            placeholderTextColor="#3A3535"
-            value={email}
-            onChangeText={setEmail}
-          />
-          <Feather name="user" color={"black"} size={24} style={styles.icon1} />
-          <TextInput
-            style={styles.input}
-            placeholder=" Password "
-            placeholderTextColor="#3A3535"
-            value={password}
-            onChangeText={setPassword}
-            secureTextEntry
-          />
-          <Feather name="lock" color={"black"} size={24} style={styles.icon2} />
+      <KeyboardAvoidingView
+        behavior="padding"
+        style={{ flex: 1 }}
+        keyboardVerticalOffset={-100} // جرب تغيير هذه القيمة حسب الحاجة
+      >
+        <View style={styles.container1}>
+          <Text style={styles.title}> Login </Text>
+          <View style={styles.inputView}>
+            <TextInput
+              style={styles.input}
+              placeholder="Email "
+              placeholderTextColor="#3A3535"
+              value={email}
+              onChangeText={setEmail}
+            />
+            <EvilIcons name="user" color={"black"} size={28} style={styles.icon1} />
+            <TextInput
+              style={styles.input}
+              placeholder=" Password "
+              placeholderTextColor="#3A3535"
+              value={password}
+              onChangeText={setPassword}
+              secureTextEntry
+            />
+            <EvilIcons name="lock" color={"black"} size={28} style={styles.icon2} />
+          </View>
+          <View style={styles.buttonView}>
+            <Pressable style={styles.button} onPress={handelSignin}>
+              <Text style={styles.buttonText}>Login</Text>
+            </Pressable>
+          </View>
         </View>
-        <View style={styles.buttonView}>
-          <Pressable style={styles.button} onPress={handelSignin}>
-            <Text style={styles.buttonText}>Login</Text>
-          </Pressable>
-        </View>
-      </View>
       </KeyboardAvoidingView>
     </View>
   );
@@ -92,19 +94,17 @@ const styles = StyleSheet.create({
   },
   icon1: {
     position: 'absolute',
-    left: 53,
-    top: 12,
-
+    left: 30, // تعديل الموضع ليكون الأيقونة قريبة من الحافة اليسرى
+    top: height * 0.03, // ضبط المسافة من الأعلى بحيث تكون الأيقونة بمحاذاة النص
   },
   icon2: {
     position: 'absolute',
-    left: 53,
-    top: 88,
-
+    left: 30,
+    top:height * 0.109, // تغيير المسافة من الأعلى لضمان محاذاة الأيقونة مع النص داخل الحقل الثاني
   },
   container2: {
     // alignItems: "center",
-    // justifyContent: "center",
+    justifyContent: "center",
     flex: 1,
     backgroundColor: '#FFFFFF',
   },
@@ -118,12 +118,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     paddingTop: 40,
-    marginTop : -70,
+    marginTop: -120,
     backgroundColor: '#FFFFFF',
-    height:height*0.4,
+    height: height * 0.39,
     width: width * 0.8,
     left: 40,
-    // top: height * 0.0.,
+    // top: height * 0.000001,
+    // marginBottom:300,
     // position: 'absolute',
     gap: 20,
     shadowColor: "#00000040",
@@ -141,23 +142,25 @@ const styles = StyleSheet.create({
 
   },
   input: {
-    height: 55,
-    // width : 250 ,
+    height: height * 0.06,
+    width: width * 0.7,
     paddingHorizontal: 40,
     borderColor: "#0A505B",
     borderWidth: 2,
     borderRadius: 20,
-    padding: 15,
+    // padding: 15,
     fontfamily: 'Roboto',
     fontstyle: "normal",
     fontweight: 400,
     fontsize: 16,
     lineheight: 10,
-    flexdirection : 'row',
+    top: height * 0.015,
+    left: -20,
+    flexdirection: 'row',
   },
   title: {
     position: 'absolute',
-    fontSize: moderateScale(35),
+    fontSize: moderateScale(30),
     color: "#148B9C",
     width: width * 0.3,
     height: height * 0.4,
@@ -166,6 +169,7 @@ const styles = StyleSheet.create({
     lineHeight: 50,
     fontStyle: 'normal',
     fontWeight: 'bold',
+    top: 3,
   },
   title1: {
     position: 'absolute',
@@ -173,7 +177,7 @@ const styles = StyleSheet.create({
     width: width,
     height: 60,
     left: 38,
-    alignContent :'center',
+    alignContent: 'center',
     top: 50,
     alignItems: 'center',
     fontFamily: "Outfit",
@@ -192,7 +196,8 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     alignItems: "center",
     justifyContent: "center",
-    marginBottom: 15,
+  
+    // marginBottom: 15,
   },
   buttonText: {
     color: "white",
@@ -201,12 +206,16 @@ const styles = StyleSheet.create({
   },
   buttonView: {
     backgroundColor: '#FFFFFF',
+    
+    top : 10 ,
+    
+
   },
   circle: {
     width: width,
     height: 430,
     borderBottomLeftRadius: 200,
-    borderBottomRightRadius: 280,
+    borderBottomRightRadius: 200,
     backgroundColor: '#E5FCFF',
     position: 'absolute',
     top: 0,
