@@ -219,7 +219,6 @@ const styles = StyleSheet.create({
   },
   buttonView: {
     backgroundColor: '#FFFFFF',
-    bottom: -40,
   },
   circle: {
     width: width,
