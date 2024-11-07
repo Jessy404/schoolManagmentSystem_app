@@ -2,11 +2,8 @@ import { Pressable, StyleSheet, TextInput, Dimensions, KeyboardAvoidingView } fr
 import { Text, View } from 'react-native';
 import { Stack, router } from 'expo-router';
 import { useState, useEffect } from 'react';
-import * as Font from 'expo-font'; // احرص على استيرادها هنا
-import Feather from 'react-native-vector-icons/Feather';
+import * as Font from 'expo-font'; 
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
-
-import { AntDesign } from '@expo/vector-icons';
 const { width, height } = Dimensions.get('window');
 const guidelineBaseWidth = 350;
 const guidelineBaseHeight = 680;
@@ -19,12 +16,12 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false); 
-  const [fontLoaded, setFontLoaded] = useState(false); // إضافة حالة تحميل الخط
+  const [fontLoaded, setFontLoaded] = useState(false); 
 
   useEffect(() => {
     const loadFonts = async () => {
       await Font.loadAsync({
-        'Outfit': require('../assets/fonts/Outfit-Regular.ttf'), // تأكد من المسار الصحيح
+        'Outfit': require('../assets/fonts/Outfit-Regular.ttf'), 
       });
       setFontLoaded(true);
     };
@@ -38,7 +35,7 @@ export default function Login() {
 
   
   const handellock = () => {
-    setShowPassword(!showPassword); // تبديل حالة رؤية كلمة المرور
+    setShowPassword(!showPassword); 
   };
   if (!fontLoaded) {
     return <Text>Loading fonts...</Text>;
@@ -69,7 +66,7 @@ export default function Login() {
               value={email}
               onChangeText={setEmail}
             />
-            <EvilIcons name="user" color={"black"} size={28} style={styles.icon1} />
+            <EvilIcons name="user" color={"black"} size={30} style={styles.icon1} />
             <TextInput
               style={styles.input}
               placeholder=" Password "
@@ -80,9 +77,9 @@ export default function Login() {
             />
             <Pressable onPress={handellock}>
               <EvilIcons
-                name={showPassword ? "unlock" : "lock"} // تبديل الأيقونة بناءً على حالة showPassword
+                name={showPassword ? "unlock" : "lock"} 
                 color={"black"}
-                size={28}
+                size={30}
                 style={styles.icon2}
               />
             </Pressable>
@@ -107,17 +104,15 @@ const styles = StyleSheet.create({
   icon1: {
     position: 'absolute',
     left: 30, 
-    top: height * 0.03, 
+    marginTop: height * 0.028,
+    
   },
   icon2: {
     position: 'absolute',
-    // left: 30,
-    // top: height * 0.113, 
     marginTop : -50 ,
   marginLeft : -10 ,
   },
   container2: {
-    // alignItems: "center",
     justifyContent: "center",
     flex: 1,
     backgroundColor: '#FFFFFF',
@@ -137,9 +132,6 @@ const styles = StyleSheet.create({
     height: height * 0.4,
     width: width * 0.8,
     left: 40,
-    // top: height * 0.000001,
-    // marginBottom:300,
-    // position: 'absolute',
     gap: 20,
     shadowColor: "#00000040",
     borderRadius: 30,
@@ -224,7 +216,7 @@ const styles = StyleSheet.create({
     width: width,
     height: 430,
     borderBottomLeftRadius: 200,
-    borderBottomRightRadius: 280,
+    borderBottomRightRadius: 200,
     backgroundColor: '#E5FCFF',
     position: 'absolute',
     top: 0,
