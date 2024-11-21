@@ -1,8 +1,8 @@
-import 'react-native-gesture-handler'; // يجب إضافتها
+import 'react-native-gesture-handler';
 import React, { useEffect, useState } from 'react';
 import * as Font from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen'; 
-import GetStarted from '../screens/GetStarted'; // تأكدي من المسار الصحيح
+import Home from '../screens/Home'; 
 
 export default function App() {
   const [fontsLoaded, setFontsLoaded] = useState(false);
@@ -10,15 +10,15 @@ export default function App() {
   useEffect(() => {
     const loadFonts = async () => {
       try {
-        await SplashScreen.preventAutoHideAsync(); // منع الشاشة من الاختفاء قبل تحميل الخطوط
+        await SplashScreen.preventAutoHideAsync(); 
         await Font.loadAsync({
-          Outfit: require('../assets/fonts/Outfit-Regular.ttf'), // تأكد من استخدام / بدلاً من \
+          Outfit: require('../assets/fonts/Outfit-Regular.ttf'), 
         });
         setFontsLoaded(true);
       } catch (error) {
-        console.warn(error); // طباعة الأخطاء في وحدة التحكم
+        console.warn(error); 
       } finally {
-        await SplashScreen.hideAsync(); // إخفاء شاشة التحميل بعد تحميل الخطوط
+        await SplashScreen.hideAsync(); 
       }
     };
 
@@ -26,10 +26,10 @@ export default function App() {
   }, []);
 
   if (!fontsLoaded) {
-    return null; // إرجاع null إذا لم يتم تحميل الخطوط
+    return null; 
   }
 
   return (
-    <GetStarted/>
+    <Home/>
   );
 }
