@@ -30,7 +30,7 @@ export default function Login() {
   }, []);
 
   const handelSignin = () => {
-    router.replace('../(tabs)/courses');
+    router.replace('../(tabs)/home');
   };
 
   
