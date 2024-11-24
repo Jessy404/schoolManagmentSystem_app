@@ -4,7 +4,7 @@ import {  Image }from 'react-native';
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
-import { Ionicons,FontAwesome , FontAwesome6,AntDesign , Feather} from '@expo/vector-icons'; // استيراد FontAwesome
+import { Ionicons,FontAwesome , FontAwesome6,AntDesign , Feather} from '@expo/vector-icons';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -61,7 +61,7 @@ export default function TabLayout() {
           ),
         }}
       />
-            <Tabs.Screen
+            {/* <Tabs.Screen
         name="profile"
         options={{
                  tabBarActiveTintColor: "#148B9C",
@@ -80,7 +80,7 @@ export default function TabLayout() {
       />
           ),
         }}
-      />
+      /> */}
     </Tabs>
   );
 }
