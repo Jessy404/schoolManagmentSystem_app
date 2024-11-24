@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, Image, Dimensions } from 'react-native';
 import Entypo from 'react-native-vector-icons/Entypo';
-
+import { useFonts } from 'expo-font';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
+
 // import { Image } from 'react-native';
 const { width } = Dimensions.get('window');
 
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
+
+
+
 
   const sections = [
     {
@@ -30,10 +34,12 @@ export default function Home() {
       id: '1',
       type: 'announcement',
       data: [
-        { id: '1', title: 'Announcement 1', message: 'Next Wednesday and Thursday are holidays.' },
-        { id: '2', title: 'Announcement 2', message: 'School event coming up next month.' },
-        { id: '3', title: 'Announcement 3', message: 'Don’t miss the sports week next Friday.' },
-        { id: '4', title: 'Announcement 4', message: 'Midterm exams schedule will be released soon.' },
+        
+        { id: '1', title: 'Announcement', message: 'The school administration is pleased to inform you that next Wednesday and Thursday are holidays on the occasion of the glorious October victory.' },
+        { id: '2', title: 'Announcement', message: 'School event coming up next month.' },
+        { id: '3', title: 'Announcement', message: 'Don’t miss the sports week next Friday.' },
+        { id: '4', title: 'Announcement', message: 'Midterm exams schedule will be released soon.' },
+        { id: '5', title: 'Announcement 1', message: 'Next Wednesday and Thursday are holidays.' },
       ],
       renderItem: ({ item }) => (
         <View style={styles.announcementCard}>
@@ -162,7 +168,7 @@ export default function Home() {
                 keyExtractor={(subItem, index) => subItem.id || index.toString()}
                 horizontal={item.type !== 'courses' && item.type !== 'header'}
                 showsHorizontalScrollIndicator={false}
-                numColumns={item.type === 'courses' ? 3 : 1}
+           
               />
             )}
           </View>
@@ -229,19 +235,25 @@ const styles = StyleSheet.create({
     elevation: 3,
     justifyContent: 'center',
     alignSelf: 'center',
+    height: 134 ,
   },
   announcementTitle: {
-    fontSize: 18,
+    fontSize: 20,
+    lineHeight :25,
+    fontFamily :"Outfit",
+    fontWeight : "500",
     color: '#fff',
-    fontWeight: 'bold',
+
   },
   announcementMessage: {
     fontSize: 14,
+    height: 79,
     color: '#fff',
-    fontFamily : "Inter",
+    lineHeight : 17 ,
+    // fontFamily : "Outfit",
     fontStyle :"normal",
     fontWeight :"400",
-    marginTop: 10,
+    marginTop: 6,
   },
   iconButton: {
     backgroundColor: '#E5FCFF',
@@ -284,8 +296,8 @@ const styles = StyleSheet.create({
 
   },
   courseTitle1: {
-    flexDirection: "row", // Ensuring the words are next to each other
-    alignItems: 'center', // Aligning them properly
+    flexDirection: "row", 
+    alignItems: 'center', 
     marginVertical: 10,
   },
   courseTitleWord: {
@@ -323,7 +335,7 @@ const styles = StyleSheet.create({
   courseTitle: {
     fontSize: 10,
     fontWeight: '700',
-    lineHeight: 8,
+    lineHeight: 10,
 
     fontFamily: "Outfit",
     marginTop: 10,
