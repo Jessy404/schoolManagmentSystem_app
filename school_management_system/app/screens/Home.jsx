@@ -34,7 +34,7 @@ export default function Home() {
       id: '1',
       type: 'announcement',
       data: [
-        
+
         { id: '1', title: 'Announcement', message: 'The school administration is pleased to inform you that next Wednesday and Thursday are holidays on the occasion of the glorious October victory.' },
         { id: '2', title: 'Announcement', message: 'School event coming up next month.' },
         { id: '3', title: 'Announcement', message: 'Don’t miss the sports week next Friday.' },
@@ -98,14 +98,34 @@ export default function Home() {
       id: '4',
       type: 'reviews',
       data: [
-        { id: '1', name: 'Mohammed Temo', review: 'As a parent, I have been thoroughly impressed...', rating: 5 },
-        { id: '2', name: 'Ahmed Ali', review: 'The school has helped my son improve tremendously.', rating: 4 },
-      ],
+        { id: '1', name: 'Mohammed Temo', review: ' As a parent, I have been thoroughly impressed with the quality of education my child receives at this school.',
+           image: 'https://s3-alpha-sig.figma.com/img/a5a2/90ad/33f54f271b2de59273f34e582a00e05e?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=qNqVh7cH3r33CS2E~qWe~nq8dSrLgCkAqgd8twMqRyCz3drSK5LADjzIMamDi4894Ur9~EPoFQHZ49mQF4qoAGLAmV1L9tFWjvs~BiCyF1xY6GQVcg411shw4X~U8o~jCWvA7jJixi6iahJ9Y~OsuHokopgHLLNVOX31RuM~jzr5KhsMXafhqF3G-HpbzEK1ZeeYo3D22~xX9FQAh-6EX2526AenjlPQ-FvMEgAWzzmMS1V0JT8nTHNV3xoTCpjIXFbXri1mND5gpW4DW3Tex3NTKr32lQKHqEcbVF9sPSoMXe~wJooVEPShhq~NMIej6J39p0i9paQvEQI9X~Nv4w__', rating: 5 },
+        { id: '2', name: 'Ahmed Ali', review: 'The school has helped my son improve tremendously.',
+           image: 'https://s3-alpha-sig.figma.com/img/a5a2/90ad/33f54f271b2de59273f34e582a00e05e?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=qNqVh7cH3r33CS2E~qWe~nq8dSrLgCkAqgd8twMqRyCz3drSK5LADjzIMamDi4894Ur9~EPoFQHZ49mQF4qoAGLAmV1L9tFWjvs~BiCyF1xY6GQVcg411shw4X~U8o~jCWvA7jJixi6iahJ9Y~OsuHokopgHLLNVOX31RuM~jzr5KhsMXafhqF3G-HpbzEK1ZeeYo3D22~xX9FQAh-6EX2526AenjlPQ-FvMEgAWzzmMS1V0JT8nTHNV3xoTCpjIXFbXri1mND5gpW4DW3Tex3NTKr32lQKHqEcbVF9sPSoMXe~wJooVEPShhq~NMIej6J39p0i9paQvEQI9X~Nv4w__', rating: 4 },
+           { id: '3', name: 'Yasmeen ibrahim', review: 'The school has helped my son improve tremendously.',
+            image: 'https://s3-alpha-sig.figma.com/img/a5a2/90ad/33f54f271b2de59273f34e582a00e05e?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=qNqVh7cH3r33CS2E~qWe~nq8dSrLgCkAqgd8twMqRyCz3drSK5LADjzIMamDi4894Ur9~EPoFQHZ49mQF4qoAGLAmV1L9tFWjvs~BiCyF1xY6GQVcg411shw4X~U8o~jCWvA7jJixi6iahJ9Y~OsuHokopgHLLNVOX31RuM~jzr5KhsMXafhqF3G-HpbzEK1ZeeYo3D22~xX9FQAh-6EX2526AenjlPQ-FvMEgAWzzmMS1V0JT8nTHNV3xoTCpjIXFbXri1mND5gpW4DW3Tex3NTKr32lQKHqEcbVF9sPSoMXe~wJooVEPShhq~NMIej6J39p0i9paQvEQI9X~Nv4w__', rating: 4 },
+          ],
       renderItem: ({ item }) => (
         <View style={styles.reviewCard}>
-          <Text style={styles.reviewerName}>{item.name}</Text>
+          <View style={[styles.reviewer, { flexDirection: 'row', alignItems: 'center' }]}>
+            <Image source={{ uri: item.image }} style={styles.studentImage} />
+            <View>
+            <Text style={styles.reviewerName}>{item.name}</Text>
+            <View style={styles.ratingContainer}>
+            {[...Array(5)].map((_, index) => (
+              <FontAwesome
+                key={index}
+                name={index < item.rating ? 'star' : 'star-o'}
+                size={12}
+                color="#FFCB5B"
+                style={styles.star}
+              />
+            ))}
+          </View>
+          </View>
+          </View>
           <Text style={styles.reviewText}>{item.review}</Text>
-          <Text style={styles.reviewRating}>⭐ {item.rating}</Text>
+        
         </View>
       ),
     },
@@ -161,16 +181,41 @@ export default function Home() {
                   numColumns={item.type === 'courses' ? 3 : 1}
                 />
               </View>
-            ) : (
-              <FlatList
-                data={item.data}
-                renderItem={item.renderItem}
-                keyExtractor={(subItem, index) => subItem.id || index.toString()}
-                horizontal={item.type !== 'courses' && item.type !== 'header'}
-                showsHorizontalScrollIndicator={false}
-           
-              />
-            )}
+            ) :
+              item.type === 'reviews' ? (
+                <View style={styles.courseSection}>
+                  <View style={styles.courseTitle1}>
+                    <Text style={styles.courseTitleWord}>What </Text>
+                    <Text style={styles.courseTitleWord1}> parents </Text>
+                    <Text style={styles.courseTitleWord}>say </Text>
+                  </View>
+                  <FlatList
+                    data={item.data}
+                    renderItem={item.renderItem}
+                    horizontal
+                    keyExtractor={(subItem) => subItem.id}
+               
+                    snapToAlignment="center"
+                    snapToInterval={width * 0.85 + width * 0.075 * 2}
+                    decelerationRate="normal"
+                    // onScroll={handleScroll}
+                    showsHorizontalScrollIndicator={false}
+                    // scrollEventThrottle={16}
+                    numColumns={item.type === 'courses' ? 3 : 1}
+                  />
+                </View>
+              ) : (
+                <FlatList
+                  data={item.data}
+                  renderItem={item.renderItem}
+                  keyExtractor={(subItem, index) => subItem.id || index.toString()}
+                  horizontal={item.type !== 'courses' && item.type !== 'header'}
+                  showsHorizontalScrollIndicator={false}
+
+                />
+              )
+
+            }
           </View>
         )}
       />
@@ -193,23 +238,20 @@ const styles = StyleSheet.create({
   logo: {
     width: 50,
     height: 50,
-    top: 15 ,
+    top: 15,
   },
   action: {
     flexDirection: "row",
     marginLeft: 110,
     width: 160,
     height: 35,
-    alignItems :"center",
-    top: 15 ,
+    alignItems: "center",
+    top: 15,
   },
   studentImage: {
     width: 35,
     height: 35,
     borderRadius: 25,
-    // resizeMode: 'contain',
-
-    // position :"absolute"
   },
   userName: {
     fontSize: 16,
@@ -219,12 +261,9 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     height: 20,
     width: 115,
-    // position :"absolute"
-
-    // marginLeft: 200,
   },
   sectionContainer: {
-    marginBottom: 20,
+    // marginBottom: 20,
   },
   announcementCard: {
     backgroundColor: '#148B9C',
@@ -235,13 +274,13 @@ const styles = StyleSheet.create({
     elevation: 3,
     justifyContent: 'center',
     alignSelf: 'center',
-    height: 134 ,
+    height: 134,
   },
   announcementTitle: {
     fontSize: 20,
-    lineHeight :25,
-    fontFamily :"Outfit",
-    fontWeight : "500",
+    lineHeight: 25,
+    fontFamily: "Outfit",
+    fontWeight: "500",
     color: '#fff',
 
   },
@@ -249,10 +288,10 @@ const styles = StyleSheet.create({
     fontSize: 14,
     height: 79,
     color: '#fff',
-    lineHeight : 17 ,
+    lineHeight: 17,
     // fontFamily : "Outfit",
-    fontStyle :"normal",
-    fontWeight :"400",
+    fontStyle: "normal",
+    fontWeight: "400",
     marginTop: 6,
   },
   iconButton: {
@@ -296,8 +335,8 @@ const styles = StyleSheet.create({
 
   },
   courseTitle1: {
-    flexDirection: "row", 
-    alignItems: 'center', 
+    flexDirection: "row",
+    alignItems: 'center',
     marginVertical: 10,
   },
   courseTitleWord: {
@@ -307,6 +346,7 @@ const styles = StyleSheet.create({
     lineHeight: 25,
     fontWeight: '600',
     color: '#000',
+    textTransform: "capitalize",
   },
   courseTitleWord1: {
     fontSize: 20,
@@ -315,6 +355,7 @@ const styles = StyleSheet.create({
     lineHeight: 25,
     fontWeight: '600',
     color: '#148B9C',
+    textTransform: "capitalize",
   },
   courseCard: {
     width: width * 0.25,
@@ -347,19 +388,31 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   reviewCard: {
-    padding: 15,
+    padding: 10,
     backgroundColor: '#fff',
-    marginVertical: 5,
-    borderRadius: 10,
+    marginVertical: 10,
+    marginHorizontal : 10,
+    borderRadius: 25,
+    // right : 10 ,
     elevation: 2,
+    width: width * 0.75,
+    height: 151,
+    alignSelf : 'center',
+    textAlign : 'center'
+    
   },
+ 
   reviewerName: {
     fontSize: 16,
     fontWeight: 'bold',
+    marginHorizontal : 10,
   },
   reviewText: {
-    fontSize: 14,
+    fontSize: 12,
     marginVertical: 5,
+    fontFamily : 'Outfit',
+    fontStyle :'normal',
+    fontWeight :"400"
   },
   reviewRating: {
     fontSize: 12,
