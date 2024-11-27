@@ -133,9 +133,9 @@ const styles = StyleSheet.create({
     width: width * 0.8,
     left: 40,
     gap: 20,
-    shadowColor: "#00000040",
+    // shadowColor: "#00000040",
     borderRadius: 30,
-    shadowOpacity: '#00000040',
+    // shadowOpacity: '#00000040',
     elevation: 20,
   },
   inputView: {
