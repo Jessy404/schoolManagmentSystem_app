@@ -98,34 +98,40 @@ export default function Home() {
       id: '4',
       type: 'reviews',
       data: [
-        { id: '1', name: 'Mohammed Temo', review: ' As a parent, I have been thoroughly impressed with the quality of education my child receives at this school.',
-           image: 'https://s3-alpha-sig.figma.com/img/a5a2/90ad/33f54f271b2de59273f34e582a00e05e?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=qNqVh7cH3r33CS2E~qWe~nq8dSrLgCkAqgd8twMqRyCz3drSK5LADjzIMamDi4894Ur9~EPoFQHZ49mQF4qoAGLAmV1L9tFWjvs~BiCyF1xY6GQVcg411shw4X~U8o~jCWvA7jJixi6iahJ9Y~OsuHokopgHLLNVOX31RuM~jzr5KhsMXafhqF3G-HpbzEK1ZeeYo3D22~xX9FQAh-6EX2526AenjlPQ-FvMEgAWzzmMS1V0JT8nTHNV3xoTCpjIXFbXri1mND5gpW4DW3Tex3NTKr32lQKHqEcbVF9sPSoMXe~wJooVEPShhq~NMIej6J39p0i9paQvEQI9X~Nv4w__', rating: 5 },
-        { id: '2', name: 'Ahmed Ali', review: 'The school has helped my son improve tremendously.',
-           image: 'https://s3-alpha-sig.figma.com/img/a5a2/90ad/33f54f271b2de59273f34e582a00e05e?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=qNqVh7cH3r33CS2E~qWe~nq8dSrLgCkAqgd8twMqRyCz3drSK5LADjzIMamDi4894Ur9~EPoFQHZ49mQF4qoAGLAmV1L9tFWjvs~BiCyF1xY6GQVcg411shw4X~U8o~jCWvA7jJixi6iahJ9Y~OsuHokopgHLLNVOX31RuM~jzr5KhsMXafhqF3G-HpbzEK1ZeeYo3D22~xX9FQAh-6EX2526AenjlPQ-FvMEgAWzzmMS1V0JT8nTHNV3xoTCpjIXFbXri1mND5gpW4DW3Tex3NTKr32lQKHqEcbVF9sPSoMXe~wJooVEPShhq~NMIej6J39p0i9paQvEQI9X~Nv4w__', rating: 4 },
-           { id: '3', name: 'Yasmeen ibrahim', review: 'The school has helped my son improve tremendously.',
-            image: 'https://s3-alpha-sig.figma.com/img/a5a2/90ad/33f54f271b2de59273f34e582a00e05e?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=qNqVh7cH3r33CS2E~qWe~nq8dSrLgCkAqgd8twMqRyCz3drSK5LADjzIMamDi4894Ur9~EPoFQHZ49mQF4qoAGLAmV1L9tFWjvs~BiCyF1xY6GQVcg411shw4X~U8o~jCWvA7jJixi6iahJ9Y~OsuHokopgHLLNVOX31RuM~jzr5KhsMXafhqF3G-HpbzEK1ZeeYo3D22~xX9FQAh-6EX2526AenjlPQ-FvMEgAWzzmMS1V0JT8nTHNV3xoTCpjIXFbXri1mND5gpW4DW3Tex3NTKr32lQKHqEcbVF9sPSoMXe~wJooVEPShhq~NMIej6J39p0i9paQvEQI9X~Nv4w__', rating: 4 },
-          ],
+        {
+          id: '1', name: 'Mohammed Temo', review: ' As a parent, I have been thoroughly impressed with the quality of education my child receives at this school.',
+          image: 'https://s3-alpha-sig.figma.com/img/a5a2/90ad/33f54f271b2de59273f34e582a00e05e?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=qNqVh7cH3r33CS2E~qWe~nq8dSrLgCkAqgd8twMqRyCz3drSK5LADjzIMamDi4894Ur9~EPoFQHZ49mQF4qoAGLAmV1L9tFWjvs~BiCyF1xY6GQVcg411shw4X~U8o~jCWvA7jJixi6iahJ9Y~OsuHokopgHLLNVOX31RuM~jzr5KhsMXafhqF3G-HpbzEK1ZeeYo3D22~xX9FQAh-6EX2526AenjlPQ-FvMEgAWzzmMS1V0JT8nTHNV3xoTCpjIXFbXri1mND5gpW4DW3Tex3NTKr32lQKHqEcbVF9sPSoMXe~wJooVEPShhq~NMIej6J39p0i9paQvEQI9X~Nv4w__', rating: 5
+        },
+        {
+          id: '2', name: 'Ahmed Ali', review: 'The school has helped my son improve tremendously.',
+          image: 'https://s3-alpha-sig.figma.com/img/a5a2/90ad/33f54f271b2de59273f34e582a00e05e?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=qNqVh7cH3r33CS2E~qWe~nq8dSrLgCkAqgd8twMqRyCz3drSK5LADjzIMamDi4894Ur9~EPoFQHZ49mQF4qoAGLAmV1L9tFWjvs~BiCyF1xY6GQVcg411shw4X~U8o~jCWvA7jJixi6iahJ9Y~OsuHokopgHLLNVOX31RuM~jzr5KhsMXafhqF3G-HpbzEK1ZeeYo3D22~xX9FQAh-6EX2526AenjlPQ-FvMEgAWzzmMS1V0JT8nTHNV3xoTCpjIXFbXri1mND5gpW4DW3Tex3NTKr32lQKHqEcbVF9sPSoMXe~wJooVEPShhq~NMIej6J39p0i9paQvEQI9X~Nv4w__', rating: 4
+        },
+        {
+          id: '3', name: 'Yasmeen ibrahim', review: 'The school has helped my son improve tremendously.',
+          image: 'https://s3-alpha-sig.figma.com/img/a5a2/90ad/33f54f271b2de59273f34e582a00e05e?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=qNqVh7cH3r33CS2E~qWe~nq8dSrLgCkAqgd8twMqRyCz3drSK5LADjzIMamDi4894Ur9~EPoFQHZ49mQF4qoAGLAmV1L9tFWjvs~BiCyF1xY6GQVcg411shw4X~U8o~jCWvA7jJixi6iahJ9Y~OsuHokopgHLLNVOX31RuM~jzr5KhsMXafhqF3G-HpbzEK1ZeeYo3D22~xX9FQAh-6EX2526AenjlPQ-FvMEgAWzzmMS1V0JT8nTHNV3xoTCpjIXFbXri1mND5gpW4DW3Tex3NTKr32lQKHqEcbVF9sPSoMXe~wJooVEPShhq~NMIej6J39p0i9paQvEQI9X~Nv4w__', rating: 4
+        },
+      ],
       renderItem: ({ item }) => (
         <View style={styles.reviewCard}>
           <View style={[styles.reviewer, { flexDirection: 'row', alignItems: 'center' }]}>
             <Image source={{ uri: item.image }} style={styles.studentImage} />
             <View>
-            <Text style={styles.reviewerName}>{item.name}</Text>
-            <View style={styles.ratingContainer}>
-            {[...Array(5)].map((_, index) => (
-              <FontAwesome
-                key={index}
-                name={index < item.rating ? 'star' : 'star-o'}
-                size={12}
-                color="#FFCB5B"
-                style={styles.star}
-              />
-            ))}
-          </View>
-          </View>
+              <Text style={styles.reviewerName}>{item.name}</Text>
+              <View style={styles.ratingContainer}>
+                {[...Array(5)].map((_, index) => (
+                  <FontAwesome
+                    key={index}
+                    name={index < item.rating ? 'star' : 'star-o'}
+                    size={12}
+                    color="#FFCB5B"
+                    style={styles.star}
+                  />
+                ))}
+              </View>
+            </View>
           </View>
           <Text style={styles.reviewText}>{item.review}</Text>
-        
+
         </View>
       ),
     },
@@ -194,13 +200,13 @@ export default function Home() {
                     renderItem={item.renderItem}
                     horizontal
                     keyExtractor={(subItem) => subItem.id}
-               
-                    snapToAlignment="center"
+                    pagingEnabled
+                    // snapToAlignment="center"
                     snapToInterval={width * 0.85 + width * 0.075 * 2}
                     decelerationRate="normal"
-                    // onScroll={handleScroll}
+                    onScroll={handleScroll}
                     showsHorizontalScrollIndicator={false}
-                    // scrollEventThrottle={16}
+                    scrollEventThrottle={16}
                     numColumns={item.type === 'courses' ? 3 : 1}
                   />
                 </View>
@@ -232,13 +238,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: 20,
+    padding: 15,
     backgroundColor: '#FFFF',
   },
   logo: {
     width: 50,
     height: 50,
-    top: 15,
+    // top: 5,
   },
   action: {
     flexDirection: "row",
@@ -246,7 +252,7 @@ const styles = StyleSheet.create({
     width: 160,
     height: 35,
     alignItems: "center",
-    top: 15,
+    // top: 5,
   },
   studentImage: {
     width: 35,
@@ -391,28 +397,27 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: '#fff',
     marginVertical: 10,
-    marginHorizontal : 10,
+    marginHorizontal: 10,
     borderRadius: 25,
-    // right : 10 ,
     elevation: 2,
     width: width * 0.75,
     height: 151,
-    alignSelf : 'center',
-    textAlign : 'center'
-    
+    alignSelf: 'center',
+    textAlign: 'center'
+
   },
- 
+
   reviewerName: {
     fontSize: 16,
     fontWeight: 'bold',
-    marginHorizontal : 10,
+    marginHorizontal: 10,
   },
   reviewText: {
     fontSize: 12,
     marginVertical: 5,
-    fontFamily : 'Outfit',
-    fontStyle :'normal',
-    fontWeight :"400"
+    fontFamily: 'Outfit',
+    fontStyle: 'normal',
+    fontWeight: "400"
   },
   reviewRating: {
     fontSize: 12,
