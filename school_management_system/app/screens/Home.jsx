@@ -202,7 +202,7 @@ export default function Home() {
                     keyExtractor={(subItem) => subItem.id}
                     pagingEnabled
                     // snapToAlignment="center"
-                    snapToInterval={width * 0.85 + width * 0.075 * 2}
+                    snapToInterval={width * 0.75+ width * 0.025 * 2}
                     decelerationRate="normal"
                     onScroll={handleScroll}
                     showsHorizontalScrollIndicator={false}
