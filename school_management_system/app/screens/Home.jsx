@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { View, Text, FlatList, TouchableOpacity, StyleSheet, Image, Dimensions } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, StyleSheet, Image, Dimensions , Pressable } from 'react-native';
 import Entypo from 'react-native-vector-icons/Entypo';
 import { useFonts } from 'expo-font';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
-
+import { router } from 'expo-router';
 // import { Image } from 'react-native';
 const { width } = Dimensions.get('window');
 
@@ -24,7 +24,7 @@ export default function Home() {
           <Image source={require('../assets/images/logo.png')} style={styles.logo} />
           <View style={styles.action}>
             <Text style={styles.userName}>Hi , Yasmeen</Text>
-            <Image source={{ uri: 'https://s3-alpha-sig.figma.com/img/a5a2/90ad/33f54f271b2de59273f34e582a00e05e?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=qNqVh7cH3r33CS2E~qWe~nq8dSrLgCkAqgd8twMqRyCz3drSK5LADjzIMamDi4894Ur9~EPoFQHZ49mQF4qoAGLAmV1L9tFWjvs~BiCyF1xY6GQVcg411shw4X~U8o~jCWvA7jJixi6iahJ9Y~OsuHokopgHLLNVOX31RuM~jzr5KhsMXafhqF3G-HpbzEK1ZeeYo3D22~xX9FQAh-6EX2526AenjlPQ-FvMEgAWzzmMS1V0JT8nTHNV3xoTCpjIXFbXri1mND5gpW4DW3Tex3NTKr32lQKHqEcbVF9sPSoMXe~wJooVEPShhq~NMIej6J39p0i9paQvEQI9X~Nv4w__' }} style={styles.studentImage} />
+        
 
           </View>
         </View>
@@ -75,10 +75,42 @@ export default function Home() {
         { id: '4', title: 'Course 4', image: 'https://s3-alpha-sig.figma.com/img/4e19/2fb7/d2883bc94d7779c24d4c27b60d015331?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=k5V5nwx7SQIWNaTOouhkDuM05Jo6ePcxq4g5yY5LKlN2AxLQx4W06Hy9~-zkyY0Rm~yRquH64NvDlaXB425VXXv1sFA-D0Ou02s9tmzco-Npf0UkvnBIUX6ZmOcMYI7q2QGyKk1snBwo7mrRtwoRC60KAbD4cZKDM5WGxA7Yt3cyWkpjITxzeT8g1si~8PVEodKpmUnSmTwVbmqvi3M-bUij3mQ~ege0WxKjLEVrI~a3DX9uaREgX8dxH~Mgedrfm8m9WI3cEYiIEQLVN6vScYN6SVHDfp1MocqijiIRIDA6mQgVYahNLora~Rq9n2ruNC2gPfXlQxCGmjTcKScBeQ__', rating: 5 },
         { id: '5', title: 'Course 5', image: 'https://s3-alpha-sig.figma.com/img/4e19/2fb7/d2883bc94d7779c24d4c27b60d015331?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=k5V5nwx7SQIWNaTOouhkDuM05Jo6ePcxq4g5yY5LKlN2AxLQx4W06Hy9~-zkyY0Rm~yRquH64NvDlaXB425VXXv1sFA-D0Ou02s9tmzco-Npf0UkvnBIUX6ZmOcMYI7q2QGyKk1snBwo7mrRtwoRC60KAbD4cZKDM5WGxA7Yt3cyWkpjITxzeT8g1si~8PVEodKpmUnSmTwVbmqvi3M-bUij3mQ~ege0WxKjLEVrI~a3DX9uaREgX8dxH~Mgedrfm8m9WI3cEYiIEQLVN6vScYN6SVHDfp1MocqijiIRIDA6mQgVYahNLora~Rq9n2ruNC2gPfXlQxCGmjTcKScBeQ__', rating: 2 },
         { id: '6', title: 'Course 5', image: 'https://s3-alpha-sig.figma.com/img/4e19/2fb7/d2883bc94d7779c24d4c27b60d015331?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=k5V5nwx7SQIWNaTOouhkDuM05Jo6ePcxq4g5yY5LKlN2AxLQx4W06Hy9~-zkyY0Rm~yRquH64NvDlaXB425VXXv1sFA-D0Ou02s9tmzco-Npf0UkvnBIUX6ZmOcMYI7q2QGyKk1snBwo7mrRtwoRC60KAbD4cZKDM5WGxA7Yt3cyWkpjITxzeT8g1si~8PVEodKpmUnSmTwVbmqvi3M-bUij3mQ~ege0WxKjLEVrI~a3DX9uaREgX8dxH~Mgedrfm8m9WI3cEYiIEQLVN6vScYN6SVHDfp1MocqijiIRIDA6mQgVYahNLora~Rq9n2ruNC2gPfXlQxCGmjTcKScBeQ__', rating: 5 },
+      ],      renderItem: ({ item }) => (
+        <View style={styles.courseCard}>
+          <View style ={styles.imageVeiw}>
+          <Image source={{ uri: item.image }} style={styles.courseImage} />
+          </View>
+          <Text style={styles.courseTitle}>{item.title}</Text>
+          <View style={styles.ratingContainer}>
+            {[...Array(5)].map((_, index) => (
+              <FontAwesome
+                key={index}
+                name={index < item.rating ? 'star' : 'star-o'}
+                size={12}
+                color="#FFCB5B"
+                style={styles.star}
+              />
+            ))}
+          </View>
+        </View>
+      ),  
+    },
+       {
+      id: '4',
+      type: 'AllCourses',
+      data: [
+        { id: '1', title: 'Course 1', image: 'https://s3-alpha-sig.figma.com/img/4e19/2fb7/d2883bc94d7779c24d4c27b60d015331?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=k5V5nwx7SQIWNaTOouhkDuM05Jo6ePcxq4g5yY5LKlN2AxLQx4W06Hy9~-zkyY0Rm~yRquH64NvDlaXB425VXXv1sFA-D0Ou02s9tmzco-Npf0UkvnBIUX6ZmOcMYI7q2QGyKk1snBwo7mrRtwoRC60KAbD4cZKDM5WGxA7Yt3cyWkpjITxzeT8g1si~8PVEodKpmUnSmTwVbmqvi3M-bUij3mQ~ege0WxKjLEVrI~a3DX9uaREgX8dxH~Mgedrfm8m9WI3cEYiIEQLVN6vScYN6SVHDfp1MocqijiIRIDA6mQgVYahNLora~Rq9n2ruNC2gPfXlQxCGmjTcKScBeQ__', rating: 4 },
+        { id: '2', title: 'Course 2', image: 'https://s3-alpha-sig.figma.com/img/4e19/2fb7/d2883bc94d7779c24d4c27b60d015331?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=k5V5nwx7SQIWNaTOouhkDuM05Jo6ePcxq4g5yY5LKlN2AxLQx4W06Hy9~-zkyY0Rm~yRquH64NvDlaXB425VXXv1sFA-D0Ou02s9tmzco-Npf0UkvnBIUX6ZmOcMYI7q2QGyKk1snBwo7mrRtwoRC60KAbD4cZKDM5WGxA7Yt3cyWkpjITxzeT8g1si~8PVEodKpmUnSmTwVbmqvi3M-bUij3mQ~ege0WxKjLEVrI~a3DX9uaREgX8dxH~Mgedrfm8m9WI3cEYiIEQLVN6vScYN6SVHDfp1MocqijiIRIDA6mQgVYahNLora~Rq9n2ruNC2gPfXlQxCGmjTcKScBeQ__', rating: 5 },
+        { id: '3', title: 'Course 3', image: 'https://s3-alpha-sig.figma.com/img/4e19/2fb7/d2883bc94d7779c24d4c27b60d015331?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=k5V5nwx7SQIWNaTOouhkDuM05Jo6ePcxq4g5yY5LKlN2AxLQx4W06Hy9~-zkyY0Rm~yRquH64NvDlaXB425VXXv1sFA-D0Ou02s9tmzco-Npf0UkvnBIUX6ZmOcMYI7q2QGyKk1snBwo7mrRtwoRC60KAbD4cZKDM5WGxA7Yt3cyWkpjITxzeT8g1si~8PVEodKpmUnSmTwVbmqvi3M-bUij3mQ~ege0WxKjLEVrI~a3DX9uaREgX8dxH~Mgedrfm8m9WI3cEYiIEQLVN6vScYN6SVHDfp1MocqijiIRIDA6mQgVYahNLora~Rq9n2ruNC2gPfXlQxCGmjTcKScBeQ__', rating: 5 },
+        { id: '4', title: 'Course 4', image: 'https://s3-alpha-sig.figma.com/img/4e19/2fb7/d2883bc94d7779c24d4c27b60d015331?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=k5V5nwx7SQIWNaTOouhkDuM05Jo6ePcxq4g5yY5LKlN2AxLQx4W06Hy9~-zkyY0Rm~yRquH64NvDlaXB425VXXv1sFA-D0Ou02s9tmzco-Npf0UkvnBIUX6ZmOcMYI7q2QGyKk1snBwo7mrRtwoRC60KAbD4cZKDM5WGxA7Yt3cyWkpjITxzeT8g1si~8PVEodKpmUnSmTwVbmqvi3M-bUij3mQ~ege0WxKjLEVrI~a3DX9uaREgX8dxH~Mgedrfm8m9WI3cEYiIEQLVN6vScYN6SVHDfp1MocqijiIRIDA6mQgVYahNLora~Rq9n2ruNC2gPfXlQxCGmjTcKScBeQ__', rating: 5 },
+        { id: '5', title: 'Course 5', image: 'https://s3-alpha-sig.figma.com/img/4e19/2fb7/d2883bc94d7779c24d4c27b60d015331?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=k5V5nwx7SQIWNaTOouhkDuM05Jo6ePcxq4g5yY5LKlN2AxLQx4W06Hy9~-zkyY0Rm~yRquH64NvDlaXB425VXXv1sFA-D0Ou02s9tmzco-Npf0UkvnBIUX6ZmOcMYI7q2QGyKk1snBwo7mrRtwoRC60KAbD4cZKDM5WGxA7Yt3cyWkpjITxzeT8g1si~8PVEodKpmUnSmTwVbmqvi3M-bUij3mQ~ege0WxKjLEVrI~a3DX9uaREgX8dxH~Mgedrfm8m9WI3cEYiIEQLVN6vScYN6SVHDfp1MocqijiIRIDA6mQgVYahNLora~Rq9n2ruNC2gPfXlQxCGmjTcKScBeQ__', rating: 2 },
+        { id: '6', title: 'Course 5', image: 'https://s3-alpha-sig.figma.com/img/4e19/2fb7/d2883bc94d7779c24d4c27b60d015331?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=k5V5nwx7SQIWNaTOouhkDuM05Jo6ePcxq4g5yY5LKlN2AxLQx4W06Hy9~-zkyY0Rm~yRquH64NvDlaXB425VXXv1sFA-D0Ou02s9tmzco-Npf0UkvnBIUX6ZmOcMYI7q2QGyKk1snBwo7mrRtwoRC60KAbD4cZKDM5WGxA7Yt3cyWkpjITxzeT8g1si~8PVEodKpmUnSmTwVbmqvi3M-bUij3mQ~ege0WxKjLEVrI~a3DX9uaREgX8dxH~Mgedrfm8m9WI3cEYiIEQLVN6vScYN6SVHDfp1MocqijiIRIDA6mQgVYahNLora~Rq9n2ruNC2gPfXlQxCGmjTcKScBeQ__', rating: 5 },
       ],
       renderItem: ({ item }) => (
-        <View style={styles.courseCard}>
+        <View style={styles.allcourseCard}>
+          <View style ={styles.imageVeiw}>
           <Image source={{ uri: item.image }} style={styles.courseImage} />
+          </View>
           <Text style={styles.courseTitle}>{item.title}</Text>
           <View style={styles.ratingContainer}>
             {[...Array(5)].map((_, index) => (
@@ -95,7 +127,7 @@ export default function Home() {
       ),
     },
     {
-      id: '4',
+      id: '5',
       type: 'reviews',
       data: [
         {
@@ -143,6 +175,7 @@ export default function Home() {
   };
 
   return (
+    
     <View style={styles.container}>
       <FlatList
         data={sections}
@@ -175,22 +208,39 @@ export default function Home() {
               </>
             ) : item.type === 'courses' ? (
               <View style={styles.courseSection}>
-                <View style={styles.courseTitle1}>
-                  <Text style={styles.courseTitleWord}>Your </Text>
+                <Pressable style={styles.courseTitle1}   onPress={() => router.push('../(tabs)/courses')} >
+                  <Text style={styles.courseTitleWord}>My </Text>
                   <Text style={styles.courseTitleWord1}> Courses </Text>
-                </View>
+                </Pressable>
                 <FlatList
                   data={item.data}
+                  horizontal
                   renderItem={item.renderItem}
                   keyExtractor={(subItem) => subItem.id}
                   showsHorizontalScrollIndicator={false}
-                  numColumns={item.type === 'courses' ? 3 : 1}
+         
+                />
+              </View>
+            ) :
+            item.type === 'AllCourses' ? (
+              <View style={styles.courseSection}>
+                <Pressable style={styles.allcourseTitle1}   onPress={() => router.push('../(tabs)/courses')} >
+                  <Text style={styles.courseTitleWord}>All</Text>
+                  <Text style={styles.courseTitleWord1}> Courses </Text>
+                </Pressable>
+                <FlatList
+                  data={item.data}
+                  horizontal
+                  renderItem={item.renderItem}
+                  keyExtractor={(subItem) => subItem.id}
+                  showsHorizontalScrollIndicator={false}
+         
                 />
               </View>
             ) :
               item.type === 'reviews' ? (
-                <View style={styles.courseSection}>
-                  <View style={styles.courseTitle1}>
+                <View style={styles. reviewSection}>
+                  <View style={styles.reveiwTitle}>
                     <Text style={styles.courseTitleWord}>What </Text>
                     <Text style={styles.courseTitleWord1}> parents </Text>
                     <Text style={styles.courseTitleWord}>say </Text>
@@ -204,7 +254,6 @@ export default function Home() {
                     // snapToAlignment="center"
                     snapToInterval={width * 0.75+ width * 0.025 * 2}
                     decelerationRate="normal"
-                    onScroll={handleScroll}
                     showsHorizontalScrollIndicator={false}
                     scrollEventThrottle={16}
                     numColumns={item.type === 'courses' ? 3 : 1}
@@ -244,15 +293,15 @@ const styles = StyleSheet.create({
   logo: {
     width: 50,
     height: 50,
-    // top: 5,
+    top: -5,
   },
   action: {
     flexDirection: "row",
-    marginLeft: 110,
     width: 160,
     height: 35,
+    left : 40 ,
     alignItems: "center",
-    // top: 5,
+    top: -5,
   },
   studentImage: {
     width: 35,
@@ -330,8 +379,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     marginTop: 5,
+    marginLeft : 40 ,
   },
-  courseSection: {
+reviewSection: {
     marginBottom: 20,
     alignItems: 'center',
     width: "80%",
@@ -340,10 +390,35 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
 
   },
+  courseSection: {
+    marginBottom: 20,
+    alignItems: 'center',
+    width: "90%",
+    justifyContent: "center",
+    textAlign: 'center',
+    alignSelf: 'center',
+    padding : 10 ,
+
+  },
   courseTitle1: {
     flexDirection: "row",
+    alignItems: 'flex-start',
+    // marginVertical: 10,
+    right : 110 ,
+    top: 10 ,
+  },
+  allcourseTitle1: {
+    flexDirection: "row",
+    alignItems: 'flex-start',
+    // marginVertical: 10,
+    right : 110 ,
+    // top: -20 ,
+  },
+  reveiwTitle: {
+    flexDirection: "row",
     alignItems: 'center',
-    marginVertical: 10,
+    top : -30 ,
+    // marginVertical: 10,
   },
   courseTitleWord: {
     fontSize: 20,
@@ -364,29 +439,52 @@ const styles = StyleSheet.create({
     textTransform: "capitalize",
   },
   courseCard: {
-    width: width * 0.25,
-    margin: 10,
+    width: 192,
+    height : 156 ,
+    marginVertical: 30,
+    // marginHorizontal : -20 ,
+    // right : 40 ,
     alignItems: 'center',
     justifyContent: 'center',
-    overflow: 'hidden',
-    backgroundColor: "#E5FCFF",
+    color: '#148B9C',
 
   },
+  allcourseCard: {
+    width: 192,
+    height : 156 ,
+    marginVertical: 30,
+    // marginHorizontal : -20 ,
+    // right : 40 ,
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: '#148B9C',
 
+  },
+imageVeiw:{
+  width : 170 ,
+  height :120 ,
+  backgroundColor: "#E5FCFF",
+  padding : 20,
+  justifyContent: 'center',
+alignContent :'center'
+},
   courseImage: {
-    width: 46,
-    height: 51,
+    width: 83,
+    height: 92,
     padding: 10,
-
+    backgroundColor: "#E5FCFF",
+    alignSelf :'center'
   },
   courseTitle: {
-    fontSize: 10,
+    fontSize: 11,
     fontWeight: '700',
-    lineHeight: 10,
-
+    lineHeight: 14,
     fontFamily: "Outfit",
-    marginTop: 10,
-    textAlign: 'center',
+    marginTop: 20,
+    textAlign: 'left',
+    width: 170,
+   fontStyle :'normal',
+  
   },
   courseRating: {
     fontSize: 14,

@@ -1,5 +1,5 @@
 import { Pressable, StyleSheet, TextInput, Dimensions, KeyboardAvoidingView } from 'react-native';
-import { Text, View } from 'react-native';
+import { Text, View , Image, } from 'react-native';
 import { Stack, router } from 'expo-router';
 import { useState, useEffect } from 'react';
 import * as Font from 'expo-font'; 
@@ -45,17 +45,25 @@ export default function Login() {
 
     <View style={styles.container2} >
       <View style={styles.container}>
-
         <View style={styles.circle} />
-        <Text style={styles.title1} >
+        <KeyboardAvoidingView
+        behavior="padding"
+        style={{ flex: 1 }}
+        keyboardVerticalOffset={-100}
+      >
+        <Image source={require('../assets/images/logo.png')} style={styles.logo} />
+      </KeyboardAvoidingView>
+        {/* <Text style={styles.title1} >
+
           School Team
-        </Text>
+        </Text> */}
       </View>
       <KeyboardAvoidingView
         behavior="padding"
         style={{ flex: 1 }}
         keyboardVerticalOffset={-100}
       >
+      
         <View style={styles.container1}>
           <Text style={styles.title}> Login </Text>
           <View style={styles.inputView}>
@@ -116,11 +124,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     flex: 1,
     backgroundColor: '#FFFFFF',
+    
   },
   container: {
     alignItems: "center",
     justifyContent: "center",
     flex: 1,
+    flexDirection: 'row',
     backgroundColor: '#FFFFFF',
   },
   container1: {
@@ -146,6 +156,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 40,
     marginBottom: 5
 
+  },
+  logo:{
+    width : 170 ,
+    height : 170 ,
+    alignContent: 'center',
+    top: -60,
+    alignItems: 'center',
+    alignSelf :"center"
   },
   input: {
     height: height * 0.06,
@@ -179,9 +197,7 @@ const styles = StyleSheet.create({
   },
   title1: {
     position: 'absolute',
-    fontSize: moderateScale(48),
-    width: width,
-    height: 60,
+    fontSize: 32,
     left: 38,
     alignContent: 'center',
     top: 50,
@@ -191,6 +207,7 @@ const styles = StyleSheet.create({
     fontStyle: 'normal',
     fontWeight: '400',
     color: "#000000",
+    alignSelf : "center"
   },
 
 
@@ -219,7 +236,8 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 200,
     backgroundColor: '#E5FCFF',
     position: 'absolute',
-    top: 0,
-    left: 0,
+   flexDirection :"row"
+
   },
+  
 });
