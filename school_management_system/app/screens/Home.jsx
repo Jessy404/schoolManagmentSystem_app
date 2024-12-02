@@ -59,10 +59,14 @@ export default function Home() {
         { id: '5', title: 'Courses', icon: 'book' },
       ],
       renderItem: ({ item }) => (
-        <TouchableOpacity style={styles.iconButton}>
+ <View style = {styles.iconVeiw}>
+  
+  <TouchableOpacity style={styles.iconButton}>
           <Feather name={item.icon} size={25} color="#0A505B" />
           <Text style={styles.iconButtonTitle}>{item.title}</Text>
         </TouchableOpacity>
+ </View>
+   
       ),
     },
     {
@@ -223,7 +227,7 @@ export default function Home() {
               </View>
             ) :
             item.type === 'AllCourses' ? (
-              <View style={styles.courseSection}>
+              <View style={styles.allcourseSection}>
                 <Pressable style={styles.allcourseTitle1}   onPress={() => router.push('../(tabs)/courses')} >
                   <Text style={styles.courseTitleWord}>All</Text>
                   <Text style={styles.courseTitleWord1}> Courses </Text>
@@ -354,9 +358,18 @@ const styles = StyleSheet.create({
     padding: 5,
     borderRadius: 8,
     height: 58,
-    width: width * 0.15,
+    width: 62,
     alignItems: 'center',
-    marginHorizontal: 9,
+    justifyContent : "center",
+    marginHorizontal: 6,
+    right : -6,
+    // left : 10 ,
+    alignSelf : "center",
+  },
+  iconVeiw : {
+    justifyContent :'center',
+    alignItems :'center',
+    alignSelf :"center"
   },
   iconButtonTitle: {
     paddingTop: 6,
@@ -400,6 +413,17 @@ reviewSection: {
     padding : 10 ,
 
   },
+  allcourseSection: {
+    marginBottom: 20,
+    alignItems: 'center',
+    width: "90%",
+    justifyContent: "center",
+    textAlign: 'center',
+    alignSelf: 'center',
+    // padding : 10 ,
+    marginTop : -20 ,
+
+  },
   courseTitle1: {
     flexDirection: "row",
     alignItems: 'flex-start',
@@ -412,7 +436,7 @@ reviewSection: {
     alignItems: 'flex-start',
     // marginVertical: 10,
     right : 110 ,
-    // top: -20 ,
+    top: -20 ,
   },
   reveiwTitle: {
     flexDirection: "row",
@@ -442,22 +466,24 @@ reviewSection: {
     width: 192,
     height : 156 ,
     marginVertical: 30,
-    // marginHorizontal : -20 ,
-    // right : 40 ,
+    marginHorizontal : 5 ,
+    right : 20 ,
     alignItems: 'center',
     justifyContent: 'center',
     color: '#148B9C',
+    top : 5,
 
   },
   allcourseCard: {
     width: 192,
     height : 156 ,
     marginVertical: 30,
-    // marginHorizontal : -20 ,
-    // right : 40 ,
+    marginHorizontal : 5 ,
+    right : 20 ,
     alignItems: 'center',
     justifyContent: 'center',
     color: '#148B9C',
+    top : -20 ,
 
   },
 imageVeiw:{
