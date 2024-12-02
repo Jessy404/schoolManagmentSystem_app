@@ -1,10 +1,10 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
-import {  Image }from 'react-native';
+import { Image } from 'react-native';
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
-import { Ionicons,FontAwesome , FontAwesome6,AntDesign , Feather} from '@expo/vector-icons';
+import { Ionicons, FontAwesome, FontAwesome6, AntDesign, Feather } from '@expo/vector-icons';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -29,14 +29,14 @@ export default function TabLayout() {
       <Tabs.Screen
         name="announcement"
         options={{
-           tabBarStyle: { display: 'flex' } ,
+          tabBarStyle: { display: 'flex' },
           tabBarActiveTintColor: "#148B9C",
           tabBarInactiveTintColor: "#3A3535",
           title: 'Announcement',
           tabBarIcon: ({ color }) => (
-            <FontAwesome6 name ="medapps" color={color} size={25} />
+            <FontAwesome6 name="medapps" color={color} size={25} />
           ),
-     
+
         }}
       />
       <Tabs.Screen
@@ -53,7 +53,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="courses"
         options={{
-                 tabBarActiveTintColor: "#148B9C",
+          tabBarActiveTintColor: "#148B9C",
           tabBarInactiveTintColor: "#3A3535",
           title: 'Courses',
           tabBarIcon: ({ color }) => (
@@ -61,7 +61,7 @@ export default function TabLayout() {
           ),
         }}
       />
-            {/* <Tabs.Screen
+      <Tabs.Screen
         name="profile"
         options={{
                  tabBarActiveTintColor: "#148B9C",
@@ -80,7 +80,7 @@ export default function TabLayout() {
       />
           ),
         }}
-      /> */}
+      />
     </Tabs>
   );
 }
