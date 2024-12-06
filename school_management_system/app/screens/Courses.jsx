@@ -8,10 +8,17 @@ import {
   Image,
   TextInput,
 } from "react-native";
-import { Ionicons } from "@expo/vector-icons"; // مكتبة الأيقونات
+import { Ionicons } from "@expo/vector-icons"; 
 import FontAwesome from "react-native-vector-icons/FontAwesome";
+import HamburgerMenu from '../../components/HamburgerMenu'; 
+import { router } from "expo-router";
 
 const App = () => {
+  // const handleFilterSelect = (type) => {
+  //   setSelectedFilter(type);
+  //   console.log(`Selected filter: ${type}`); // هنا يمكنك تصفية الكورسات فعليًا
+  // };
+   const  screenType  = router.params;
   // جميع الكورسات
   const allCourses = [
     { id: "1", title: "Introduction to C++ [2nd Primary]", teacher: "Teacher Name", image: "https://s3-alpha-sig.figma.com/img/4e19/2fb7/d2883bc94d7779c24d4c27b60d015331?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=PKKZr6iFTUZcIdBcI0oLWS6gyLQdia3Q4WIBBaQcGShB~klHA2z97xlrsLD93wuRGErKFpE2Mfz75rEXUfPT7EpYXFYClWBUN3MOVimMpxQdMnwNZuWJl7qcroR73hR37pPAPtVcY01LjzYyg6FLRo3e6yDXGTcOGI9cAPmr~Mpcv9ZxrGY7xucW3sf8VGLfmQtwqRhtA8Kulkz-e1qSg-7o0zIUwAuYTgj4uhFvWose8NVubWc9vHOZWiSddynxiDy4lrYjlJKeSmJNRqRBXM2GJ20XaY2fOWplB7cPupnoOeVmB6Nx3gIijplKy6aV8vQydYs0j0K3s4jkqwioSw__", rating: 4 },
@@ -21,7 +28,6 @@ const App = () => {
     { id: "5", title: "Science for Kids [2nd Primary]", teacher: "Teacher Name", image: "https://s3-alpha-sig.figma.com/img/4e19/2fb7/d2883bc94d7779c24d4c27b60d015331?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=PKKZr6iFTUZcIdBcI0oLWS6gyLQdia3Q4WIBBaQcGShB~klHA2z97xlrsLD93wuRGErKFpE2Mfz75rEXUfPT7EpYXFYClWBUN3MOVimMpxQdMnwNZuWJl7qcroR73hR37pPAPtVcY01LjzYyg6FLRo3e6yDXGTcOGI9cAPmr~Mpcv9ZxrGY7xucW3sf8VGLfmQtwqRhtA8Kulkz-e1qSg-7o0zIUwAuYTgj4uhFvWose8NVubWc9vHOZWiSddynxiDy4lrYjlJKeSmJNRqRBXM2GJ20XaY2fOWplB7cPupnoOeVmB6Nx3gIijplKy6aV8vQydYs0j0K3s4jkqwioSw__", rating: 4 },
     { id: "6", title: "English Language [2nd Primary]", teacher: "Teacher Name", image: "https://s3-alpha-sig.figma.com/img/4e19/2fb7/d2883bc94d7779c24d4c27b60d015331?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=PKKZr6iFTUZcIdBcI0oLWS6gyLQdia3Q4WIBBaQcGShB~klHA2z97xlrsLD93wuRGErKFpE2Mfz75rEXUfPT7EpYXFYClWBUN3MOVimMpxQdMnwNZuWJl7qcroR73hR37pPAPtVcY01LjzYyg6FLRo3e6yDXGTcOGI9cAPmr~Mpcv9ZxrGY7xucW3sf8VGLfmQtwqRhtA8Kulkz-e1qSg-7o0zIUwAuYTgj4uhFvWose8NVubWc9vHOZWiSddynxiDy4lrYjlJKeSmJNRqRBXM2GJ20XaY2fOWplB7cPupnoOeVmB6Nx3gIijplKy6aV8vQydYs0j0K3s4jkqwioSw__", rating: 5 },
     { id: "7", title: "Introduction to Python [3rd Primary]", teacher: "Teacher Name", image: "https://s3-alpha-sig.figma.com/img/4e19/2fb7/d2883bc94d7779c24d4c27b60d015331?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=PKKZr6iFTUZcIdBcI0oLWS6gyLQdia3Q4WIBBaQcGShB~klHA2z97xlrsLD93wuRGErKFpE2Mfz75rEXUfPT7EpYXFYClWBUN3MOVimMpxQdMnwNZuWJl7qcroR73hR37pPAPtVcY01LjzYyg6FLRo3e6yDXGTcOGI9cAPmr~Mpcv9ZxrGY7xucW3sf8VGLfmQtwqRhtA8Kulkz-e1qSg-7o0zIUwAuYTgj4uhFvWose8NVubWc9vHOZWiSddynxiDy4lrYjlJKeSmJNRqRBXM2GJ20XaY2fOWplB7cPupnoOeVmB6Nx3gIijplKy6aV8vQydYs0j0K3s4jkqwioSw__", rating: 3 },
-  // ];
     { id: "8", title: "Science for Kids [2nd Primary]", teacher: "Teacher Name", image: "https://s3-alpha-sig.figma.com/img/4e19/2fb7/d2883bc94d7779c24d4c27b60d015331?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=PKKZr6iFTUZcIdBcI0oLWS6gyLQdia3Q4WIBBaQcGShB~klHA2z97xlrsLD93wuRGErKFpE2Mfz75rEXUfPT7EpYXFYClWBUN3MOVimMpxQdMnwNZuWJl7qcroR73hR37pPAPtVcY01LjzYyg6FLRo3e6yDXGTcOGI9cAPmr~Mpcv9ZxrGY7xucW3sf8VGLfmQtwqRhtA8Kulkz-e1qSg-7o0zIUwAuYTgj4uhFvWose8NVubWc9vHOZWiSddynxiDy4lrYjlJKeSmJNRqRBXM2GJ20XaY2fOWplB7cPupnoOeVmB6Nx3gIijplKy6aV8vQydYs0j0K3s4jkqwioSw__", rating: 4 },
     { id: "9", title: "English Language [2nd Primary]", teacher: "Teacher Name", image: "https://s3-alpha-sig.figma.com/img/4e19/2fb7/d2883bc94d7779c24d4c27b60d015331?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=PKKZr6iFTUZcIdBcI0oLWS6gyLQdia3Q4WIBBaQcGShB~klHA2z97xlrsLD93wuRGErKFpE2Mfz75rEXUfPT7EpYXFYClWBUN3MOVimMpxQdMnwNZuWJl7qcroR73hR37pPAPtVcY01LjzYyg6FLRo3e6yDXGTcOGI9cAPmr~Mpcv9ZxrGY7xucW3sf8VGLfmQtwqRhtA8Kulkz-e1qSg-7o0zIUwAuYTgj4uhFvWose8NVubWc9vHOZWiSddynxiDy4lrYjlJKeSmJNRqRBXM2GJ20XaY2fOWplB7cPupnoOeVmB6Nx3gIijplKy6aV8vQydYs0j0K3s4jkqwioSw__", rating: 5 },
     { id: "10", title: "Introduction to Python [3rd Primary]", teacher: "Teacher Name", image: "https://s3-alpha-sig.figma.com/img/4e19/2fb7/d2883bc94d7779c24d4c27b60d015331?Expires=1733702400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=PKKZr6iFTUZcIdBcI0oLWS6gyLQdia3Q4WIBBaQcGShB~klHA2z97xlrsLD93wuRGErKFpE2Mfz75rEXUfPT7EpYXFYClWBUN3MOVimMpxQdMnwNZuWJl7qcroR73hR37pPAPtVcY01LjzYyg6FLRo3e6yDXGTcOGI9cAPmr~Mpcv9ZxrGY7xucW3sf8VGLfmQtwqRhtA8Kulkz-e1qSg-7o0zIUwAuYTgj4uhFvWose8NVubWc9vHOZWiSddynxiDy4lrYjlJKeSmJNRqRBXM2GJ20XaY2fOWplB7cPupnoOeVmB6Nx3gIijplKy6aV8vQydYs0j0K3s4jkqwioSw__", rating: 2 },
@@ -39,7 +45,6 @@ const App = () => {
   const [searchText, setSearchText] = useState("");
   const [isSearchVisible, setSearchVisible] = useState(false);
 
-  // فلترة الكورسات بناءً على البحث
   const filteredCourses = () => {
     const courses = currentTab === "all" ? allCourses : myCourses;
     return courses.filter((course) =>
@@ -53,11 +58,11 @@ const App = () => {
       <FlatList
         data={courses}
         keyExtractor={(item) => item.id}
-       showsVerticalScrollIndicator ={false}
+        showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (
           <View style={styles.courseItem}>
-            <View style = {styles.imageView}>
-            <Image source={{ uri: item.image }} style={styles.courseImage} />
+            <View style={styles.imageView}>
+              <Image source={{ uri: item.image }} style={styles.courseImage} />
             </View>
             <View style={{ flex: 1 }}>
               <Text style={styles.courseTitle}>{item.title}</Text>
@@ -81,14 +86,13 @@ const App = () => {
 
   return (
     <View style={styles.container}>
+      
       <View style={styles.header}>
         <Text style={styles.title}>My Courses</Text>
-        {/* أيقونة البحث */}
         <TouchableOpacity onPress={() => setSearchVisible(!isSearchVisible)}>
           <Ionicons name="search" size={24} color="#0A505B" />
         </TouchableOpacity>
       </View>
-      {/* مربع البحث */}
       {isSearchVisible && (
         <View style={styles.searchContainer}>
           <TextInput
@@ -100,7 +104,7 @@ const App = () => {
           />
         </View>
       )}
-      {/* التبويبات */}
+     <View>
       <View style={styles.tabs}>
         <TouchableOpacity
           style={[styles.tabButton, currentTab === "my" && styles.activeTab]}
@@ -121,10 +125,12 @@ const App = () => {
           >
             All Courses
           </Text>
+          
         </TouchableOpacity>
+        {currentTab === 'all' && <HamburgerMenu />}
       </View>
-      {/* قائمة الكورسات */}
       {renderCourses()}
+    </View>
     </View>
   );
 };
@@ -162,7 +168,7 @@ const styles = StyleSheet.create({
   },
   tabs: {
     flexDirection: "row",
-    marginBottom: 20,
+    marginBottom: 35,
     top: 20,
     width: 276,
     height: 31,
@@ -198,18 +204,18 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   courseImage: {
-    width : 33 ,
-    height : 37 ,
+    width: 33,
+    height: 37,
   },
-  imageView :{
-justifyContent : 'center',
+  imageView: {
+    justifyContent: 'center',
     width: 70,
     height: 70,
     borderRadius: 10,
     marginRight: 16,
     backgroundColor: '#E5FCFF',
-    alignContent : 'center',
-    alignItems:"center",
+    alignContent: 'center',
+    alignItems: "center",
     borderRadius: 20,
   },
   courseTitle: {
@@ -227,10 +233,11 @@ justifyContent : 'center',
   ratingContainer: {
     flexDirection: "row",
     marginTop: 4,
-    gap : 5,
+    gap: 5,
     height: 12,
     width: 80,
   },
+  
 });
 
 export default App;

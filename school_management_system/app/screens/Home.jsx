@@ -11,7 +11,11 @@ const { width } = Dimensions.get('window');
 export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const [menuVisible, setMenuVisible] = useState(false);
 
+  const toggleMenu = () => {
+    setMenuVisible(!menuVisible);
+  };
 
 
   const sections = [
@@ -467,7 +471,7 @@ reviewSection: {
     height : 156 ,
     marginVertical: 30,
     marginHorizontal : 5 ,
-    right : 20 ,
+    right : 15 ,
     alignItems: 'center',
     justifyContent: 'center',
     color: '#148B9C',
@@ -479,7 +483,7 @@ reviewSection: {
     height : 156 ,
     marginVertical: 30,
     marginHorizontal : 5 ,
-    right : 20 ,
+    right : 15 ,
     alignItems: 'center',
     justifyContent: 'center',
     color: '#148B9C',
