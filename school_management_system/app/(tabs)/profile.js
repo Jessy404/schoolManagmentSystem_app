@@ -1,7 +1,7 @@
 import React from 'react'
-import Courses from "../screens/Courses"
+import Profile from "../screens/Profile"
 export default function profile() {
   return (
-  <Courses/>
+  <Profile/>
   )
 }
