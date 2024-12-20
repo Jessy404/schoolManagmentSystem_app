@@ -3,7 +3,6 @@ import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
-import Profile from './Profile';
 
 const scores = [
   { id: '1', date: '30 2024', subject: 'Science', type: 'final', teacher: 'Mrs/Maryam', score: '50/100', color: '#148B9C' },
@@ -65,18 +64,20 @@ const styles = StyleSheet.create({
       shadowRadius: 5,
     },
     title: {
-      fontSize: 24,
+      fontSize: 22,
       fontWeight: '700',
       color: '#0A505B',
       marginBottom: 16,
       textAlign: 'center',
-      letterSpacing: 0.5,  // تحسين المسافات بين الحروف
+      letterSpacing: 0.5,  
+    right : 100 ,
+
     },
     headerRow: {
       flexDirection: 'row',
       justifyContent: 'space-between',
       backgroundColor: '#148B9C',
-      paddingVertical: 14,
+      paddingVertical: 10,
       paddingHorizontal: 10,
       borderRadius: 8,
       marginBottom: 16,
@@ -92,6 +93,12 @@ const styles = StyleSheet.create({
       color: "#FFF",
       textAlign: 'center',
       textTransform: 'uppercase', 
+    },
+    header: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      marginBottom: 16,
+      justifyContent: 'space-between',
     },
     row: {
       flexDirection: 'row',
