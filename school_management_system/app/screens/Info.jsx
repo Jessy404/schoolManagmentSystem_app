@@ -64,6 +64,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 20,
+    shadowColor: "#000", 
+    shadowOpacity: 0.1, 
+    shadowRadius: 10,
+    elevation: 1, 
   },
   backButton: {
     padding: 12,

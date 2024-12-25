@@ -47,7 +47,7 @@ const Profile = () => {
                 <OptionItem title="Scores" icon="file-alt"  onPress={() =>router.push('../Account/Scores')} />
                 <OptionItem title="Schedule" icon="calendar-alt" onPress={() => router.replace('../Account/Schedule')} />
                 <OptionItem title="Info" icon="info"  onPress={() => router.replace('../Account/info')} />
-                <OptionItem title="About Us" icon="building-columns"  onPress={() => router.replace('Scores')} />
+                <OptionItem title="About Us" icon="building-columns"  onPress={() => router.replace('../Account/AboutUs')} />
             </View>
 
             {/* Logout Button */}
