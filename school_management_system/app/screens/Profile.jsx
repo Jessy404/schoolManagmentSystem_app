@@ -36,7 +36,7 @@ const Profile = () => {
                     <Text style={styles.balanceAmount}>{PROFILE_DATA.attendanceDaysLeft}</Text>
                 </View>
                 <View style={styles.buttonsContainer}>
-                    <TouchableOpacity style={styles.attendanceButton }onPress={() => router.replace('../Account/Attendance')} >
+                    <TouchableOpacity style={styles.attendanceButton }onPress={() => router.push('../Account/Attendance')} >
                         <Text style={styles.buttonText}>View All Attendance</Text>
                     </TouchableOpacity>
                 </View>
@@ -45,9 +45,9 @@ const Profile = () => {
             {/* Options List */}
             <View style={styles.optionsContainer}>
                 <OptionItem title="Scores" icon="file-alt"  onPress={() =>router.push('../Account/Scores')} />
-                <OptionItem title="Schedule" icon="calendar-alt" onPress={() => router.replace('../Account/Schedule')} />
-                <OptionItem title="Info" icon="info"  onPress={() => router.replace('../Account/info')} />
-                <OptionItem title="About Us" icon="building-columns"  onPress={() => router.replace('../Account/AboutUs')} />
+                <OptionItem title="Schedule" icon="calendar-alt" onPress={() => router.push('../Account/Schedule')} />
+                <OptionItem title="Info" icon="info"  onPress={() => router.push('../Account/info')} />
+                <OptionItem title="About Us" icon="building-columns"  onPress={() => router.push('../Account/AboutUs')} />
             </View>
 
             {/* Logout Button */}

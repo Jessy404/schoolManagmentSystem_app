@@ -36,7 +36,7 @@ const InfoScreen = () => {
     <View style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
-        <TouchableOpacity style={styles.backButton} onPress={() => router.replace('../(tabs)/profile')}>
+        <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
           <Ionicons name="arrow-back" size={24} color="#0A505B" />
         </TouchableOpacity>
         <Text style={styles.title}>Student Information</Text>
