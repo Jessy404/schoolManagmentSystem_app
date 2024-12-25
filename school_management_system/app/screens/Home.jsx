@@ -17,7 +17,6 @@ export default function Home() {
     setMenuVisible(!menuVisible);
   };
 
-
   const sections = [
     {
       id: '0',
@@ -65,7 +64,11 @@ export default function Home() {
       renderItem: ({ item }) => (
  <View style = {styles.iconVeiw}>
   
-  <TouchableOpacity style={styles.iconButton}>
+  <TouchableOpacity style={styles.iconButton} onPress={() => {
+              if (item.title === 'About Us') {
+                router.push('../Account/AboutUs');
+              }
+            }}>
           <Feather name={item.icon} size={25} color="#0A505B" />
           <Text style={styles.iconButtonTitle}>{item.title}</Text>
         </TouchableOpacity>

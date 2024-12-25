@@ -34,7 +34,7 @@ const AnnouncementPage = () => {
   };
 
   const renderAnnouncement = (item) => {
-    if (!item) return null; // تحقق إذا كان item غير موجود
+    if (!item) return null;
 
     const isExpanded = expandedAnnouncements[item.id];
     const isLongMessage = item.message.length > 100;
