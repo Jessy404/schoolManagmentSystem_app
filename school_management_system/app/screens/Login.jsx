@@ -232,7 +232,7 @@ const styles = StyleSheet.create({
   circle: {
     width: width,
     height: 430,
-    borderBottomLeftRadius: 200,
+    borderBottomLeftRadius: width,
     borderBottomRightRadius: 200,
     backgroundColor: '#E5FCFF',
     position: 'absolute',
