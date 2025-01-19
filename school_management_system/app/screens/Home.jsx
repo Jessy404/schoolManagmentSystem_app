@@ -68,6 +68,11 @@ export default function Home() {
               if (item.title === 'About Us') {
                 router.push('../Account/AboutUs');
               }
+              if (item.title === 'Courses') {
+                router.push('../(tabs)/courses');
+            
+                }
+              
             }}>
           <Feather name={item.icon} size={25} color="#0A505B" />
           <Text style={styles.iconButtonTitle}>{item.title}</Text>
