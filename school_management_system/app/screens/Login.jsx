@@ -232,8 +232,8 @@ const styles = StyleSheet.create({
   circle: {
     width: width,
     height: 430,
-    borderBottomLeftRadius: 200,
-    borderBottomRightRadius: 200,
+    borderBottomLeftRadius: width,
+    borderBottomRightRadius: width,
     backgroundColor: '#E5FCFF',
     position: 'absolute',
    flexDirection :"row"
