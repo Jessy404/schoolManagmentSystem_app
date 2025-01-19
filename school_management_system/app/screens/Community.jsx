@@ -291,10 +291,11 @@ const CommunityScreen = () => {
   return (
     <FlatList
       ListHeaderComponent={
-        <> <><View style={styles.headerlogo}>
-          <Image source={require('../assets/images/logo.png')} style={styles.logo} />
-          <Text style={styles.header}>Community</Text>
-          </View></>
+        <>
+          <View style={styles.headerlogo}>
+            <Image source={require('../assets/images/logo.png')} style={styles.logo} />
+            <Text style={styles.header}>Community</Text>
+          </View>
           <View style={styles.newPostContainer}>
             <TextInput
               style={styles.newPostInput}

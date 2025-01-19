@@ -233,7 +233,7 @@ const styles = StyleSheet.create({
     width: width,
     height: 430,
     borderBottomLeftRadius: width,
-    borderBottomRightRadius: 200,
+    borderBottomRightRadius: width,
     backgroundColor: '#E5FCFF',
     position: 'absolute',
    flexDirection :"row"
