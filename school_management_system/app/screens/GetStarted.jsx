@@ -20,12 +20,12 @@ export default function GetStarted() {
         Animated.sequence([
           Animated.timing(logoOpacity, {
             toValue: 0, // Fade out
-            duration: 1000, 
+            duration: 3000, 
             useNativeDriver: true,
           }),
           Animated.timing(logoOpacity, {
             toValue: 1, // Fade in
-            duration:1000,
+            duration:3000,
             useNativeDriver: true,
           })
         ])

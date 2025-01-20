@@ -5,12 +5,12 @@ import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
 
 const scores = [
-  { id: '1', date: '30 2024', subject: 'Science', type: 'final', teacher: 'Mrs/Maryam', score: '50/100', color: '#148B9C' },
+  { id: '1', date: '30 2024', subject: 'English', type: 'final', teacher: 'Mrs/rania', score: '50/100', color: '#148B9C' },
   { id: '2', date: '05 2024', subject: 'Math', type: 'final', teacher: 'Mrs/Maryam', score: '20/60', color: 'red' },
-  { id: '3', date: '10 2024', subject: 'Arabic', type: 'midterm', teacher: 'Mrs/Maryam', score: '0/10', color: 'red' },
-  { id: '4', date: '15 2024', subject: 'Physics', type: 'final', teacher: 'Mr/John', score: '70/100', color: '#148B9C' },
-  { id: '5', date: '01 2024', subject: 'Chemistry', type: 'midterm', teacher: 'Mrs/Susan', score: '45/50', color: '#148B9C' },
-  { id: '6', date: '17 2024', subject: 'History', type: 'final', teacher: 'Mr/Ahmed', score: '30/70', color: 'red' },
+  { id: '3', date: '10 2024', subject: 'Arabic', type: 'midterm', teacher: 'Mrs/Yasmeen', score: '0/10', color: 'red' },
+  { id: '4', date: '15 2024', subject: 'Physics', type: 'final', teacher: 'Mr/Mohamed', score: '70/100', color: '#148B9C' },
+  { id: '5', date: '01 2024', subject: 'Chemistry', type: 'midterm', teacher: 'Mr/Ahmed', score: '45/50', color: '#148B9C' },
+  { id: '6', date: '17 2024', subject: 'History', type: 'final', teacher: 'Mr/said', score: '30/70', color: 'red' },
 ];
 
 const ScoresScreen = () => {
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     },
     columnHeader: {
       flex: 1,
-      fontSize: 13,
+      fontSize: 12,
       fontWeight: '600',
       color: "#FFF",
       textAlign: 'center',

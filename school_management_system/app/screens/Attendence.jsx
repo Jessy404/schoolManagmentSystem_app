@@ -5,10 +5,31 @@ import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
 const attendanceData = {
   '2024-12-01': { status: 'present' },
-  '2024-12-02': { status: 'absent' },
+  '2024-12-02': { status: 'present' },
   '2024-12-03': { status: 'present' },
-  '2024-12-04': { status: 'absent' },
-  '2024-12-05': { status: 'present' },
+  '2024-12-04': { status: 'present' },
+  '2024-12-05': { status: 'present' },'2025-01-01': { status: 'present' },
+  '2025-01-02': { status: 'absent' },
+  '2025-01-03': { status: 'present' },
+  '2025-01-04': { status: 'present' },
+  '2025-01-05': { status: 'present' },
+  '2025-01-06': { status: 'present' },
+  '2025-01-07': { status: 'present' },
+  '2025-01-08': { status: 'present' },
+  '2025-01-09': { status: 'present' },
+  '2025-01-10': { status: 'present' },
+  '2025-01-11': { status: 'absent' },
+  '2025-01-12': { status: 'present' },
+  '2025-01-13': { status: 'present' },
+  '2025-01-14': { status: 'present' },
+  '2025-01-15': { status: 'present' },
+  '2025-01-16': { status: 'absent' },
+  '2025-01-17': { status: 'present' },
+  '2025-01-18': { status: 'present' },
+  '2025-01-19': { status: 'absent' },
+  '2025-01-20': { status: 'present' },
+  '2025-01-21': { status: 'present' },
+
 };
 
 const getMarkedDates = () => {
