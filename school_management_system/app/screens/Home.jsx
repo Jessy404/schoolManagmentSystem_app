@@ -68,6 +68,11 @@ export default function Home() {
               if (item.title === 'About Us') {
                 router.push('../Account/AboutUs');
               }
+              if (item.title === 'Courses') {
+                router.push('../(tabs)/courses');
+            
+                }
+              
             }}>
           <Feather name={item.icon} size={25} color="#0A505B" />
           <Text style={styles.iconButtonTitle}>{item.title}</Text>
@@ -80,13 +85,13 @@ export default function Home() {
       id: '3',
       type: 'courses',
       data: [
-        { id: '1', title: 'Course 1', image: 'https://s3-alpha-sig.figma.com/img/4e19/2fb7/d2883bc94d7779c24d4c27b60d015331?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=k5V5nwx7SQIWNaTOouhkDuM05Jo6ePcxq4g5yY5LKlN2AxLQx4W06Hy9~-zkyY0Rm~yRquH64NvDlaXB425VXXv1sFA-D0Ou02s9tmzco-Npf0UkvnBIUX6ZmOcMYI7q2QGyKk1snBwo7mrRtwoRC60KAbD4cZKDM5WGxA7Yt3cyWkpjITxzeT8g1si~8PVEodKpmUnSmTwVbmqvi3M-bUij3mQ~ege0WxKjLEVrI~a3DX9uaREgX8dxH~Mgedrfm8m9WI3cEYiIEQLVN6vScYN6SVHDfp1MocqijiIRIDA6mQgVYahNLora~Rq9n2ruNC2gPfXlQxCGmjTcKScBeQ__', rating: 4 },
-        { id: '2', title: 'Course 2', image: 'https://s3-alpha-sig.figma.com/img/4e19/2fb7/d2883bc94d7779c24d4c27b60d015331?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=k5V5nwx7SQIWNaTOouhkDuM05Jo6ePcxq4g5yY5LKlN2AxLQx4W06Hy9~-zkyY0Rm~yRquH64NvDlaXB425VXXv1sFA-D0Ou02s9tmzco-Npf0UkvnBIUX6ZmOcMYI7q2QGyKk1snBwo7mrRtwoRC60KAbD4cZKDM5WGxA7Yt3cyWkpjITxzeT8g1si~8PVEodKpmUnSmTwVbmqvi3M-bUij3mQ~ege0WxKjLEVrI~a3DX9uaREgX8dxH~Mgedrfm8m9WI3cEYiIEQLVN6vScYN6SVHDfp1MocqijiIRIDA6mQgVYahNLora~Rq9n2ruNC2gPfXlQxCGmjTcKScBeQ__', rating: 5 },
-        { id: '3', title: 'Course 3', image: 'https://s3-alpha-sig.figma.com/img/4e19/2fb7/d2883bc94d7779c24d4c27b60d015331?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=k5V5nwx7SQIWNaTOouhkDuM05Jo6ePcxq4g5yY5LKlN2AxLQx4W06Hy9~-zkyY0Rm~yRquH64NvDlaXB425VXXv1sFA-D0Ou02s9tmzco-Npf0UkvnBIUX6ZmOcMYI7q2QGyKk1snBwo7mrRtwoRC60KAbD4cZKDM5WGxA7Yt3cyWkpjITxzeT8g1si~8PVEodKpmUnSmTwVbmqvi3M-bUij3mQ~ege0WxKjLEVrI~a3DX9uaREgX8dxH~Mgedrfm8m9WI3cEYiIEQLVN6vScYN6SVHDfp1MocqijiIRIDA6mQgVYahNLora~Rq9n2ruNC2gPfXlQxCGmjTcKScBeQ__', rating: 5 },
-        { id: '4', title: 'Course 4', image: 'https://s3-alpha-sig.figma.com/img/4e19/2fb7/d2883bc94d7779c24d4c27b60d015331?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=k5V5nwx7SQIWNaTOouhkDuM05Jo6ePcxq4g5yY5LKlN2AxLQx4W06Hy9~-zkyY0Rm~yRquH64NvDlaXB425VXXv1sFA-D0Ou02s9tmzco-Npf0UkvnBIUX6ZmOcMYI7q2QGyKk1snBwo7mrRtwoRC60KAbD4cZKDM5WGxA7Yt3cyWkpjITxzeT8g1si~8PVEodKpmUnSmTwVbmqvi3M-bUij3mQ~ege0WxKjLEVrI~a3DX9uaREgX8dxH~Mgedrfm8m9WI3cEYiIEQLVN6vScYN6SVHDfp1MocqijiIRIDA6mQgVYahNLora~Rq9n2ruNC2gPfXlQxCGmjTcKScBeQ__', rating: 5 },
-        { id: '5', title: 'Course 5', image: 'https://s3-alpha-sig.figma.com/img/4e19/2fb7/d2883bc94d7779c24d4c27b60d015331?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=k5V5nwx7SQIWNaTOouhkDuM05Jo6ePcxq4g5yY5LKlN2AxLQx4W06Hy9~-zkyY0Rm~yRquH64NvDlaXB425VXXv1sFA-D0Ou02s9tmzco-Npf0UkvnBIUX6ZmOcMYI7q2QGyKk1snBwo7mrRtwoRC60KAbD4cZKDM5WGxA7Yt3cyWkpjITxzeT8g1si~8PVEodKpmUnSmTwVbmqvi3M-bUij3mQ~ege0WxKjLEVrI~a3DX9uaREgX8dxH~Mgedrfm8m9WI3cEYiIEQLVN6vScYN6SVHDfp1MocqijiIRIDA6mQgVYahNLora~Rq9n2ruNC2gPfXlQxCGmjTcKScBeQ__', rating: 2 },
-        { id: '6', title: 'Course 5', image: 'https://s3-alpha-sig.figma.com/img/4e19/2fb7/d2883bc94d7779c24d4c27b60d015331?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=k5V5nwx7SQIWNaTOouhkDuM05Jo6ePcxq4g5yY5LKlN2AxLQx4W06Hy9~-zkyY0Rm~yRquH64NvDlaXB425VXXv1sFA-D0Ou02s9tmzco-Npf0UkvnBIUX6ZmOcMYI7q2QGyKk1snBwo7mrRtwoRC60KAbD4cZKDM5WGxA7Yt3cyWkpjITxzeT8g1si~8PVEodKpmUnSmTwVbmqvi3M-bUij3mQ~ege0WxKjLEVrI~a3DX9uaREgX8dxH~Mgedrfm8m9WI3cEYiIEQLVN6vScYN6SVHDfp1MocqijiIRIDA6mQgVYahNLora~Rq9n2ruNC2gPfXlQxCGmjTcKScBeQ__', rating: 5 },
-      ],      renderItem: ({ item }) => (
+        { id: "3", title: "English Language [2nd Secondary]", teacher: "Teacher Name", image: "https://images.vexels.com/media/users/3/201997/isolated/lists/ea210d04b9b9a0c0b3f65da99c46c228-english-book-flat.png", rating: 5 },
+        { id: "18", title: "physics [2nd Secondary ]", teacher: "Teacher Name", image: "https://cdn-icons-png.flaticon.com/256/1467/1467187.png", rating: 4 },  { id: "5", title: "Chemistry  [2nd Secondary]", teacher: "Teacher Name", image: "https://png.pngtree.com/png-vector/20230915/ourmid/pngtree-chemical-tube-sticker-png-image_10083609.png", rating: 4 },
+        { id: "6", title: "History [2nd Secondary]", teacher: "Teacher Name", image: "https://cdn-icons-png.flaticon.com/512/2234/2234697.png", rating: 5 },
+        { id: "1", title: "Arabic Language [2nd Secondary ]", teacher: "Teacher Name", image: "https://www.shareicon.net/data/128x128/2015/09/02/94618_arabic_512x512.png", rating: 4 },
+        { id: "2", title: "Mathematics[2nd Secondary]", teacher: "Teacher Name", image: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Deus_mathematics.png", rating: 3 },
+
+       ],      renderItem: ({ item }) => (
         <View style={styles.courseCard}>
           <View style ={styles.imageVeiw}>
           <Image source={{ uri: item.image }} style={styles.courseImage} />
@@ -110,13 +115,25 @@ export default function Home() {
       id: '4',
       type: 'AllCourses',
       data: [
-        { id: '1', title: 'Course 1', image: 'https://s3-alpha-sig.figma.com/img/4e19/2fb7/d2883bc94d7779c24d4c27b60d015331?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=k5V5nwx7SQIWNaTOouhkDuM05Jo6ePcxq4g5yY5LKlN2AxLQx4W06Hy9~-zkyY0Rm~yRquH64NvDlaXB425VXXv1sFA-D0Ou02s9tmzco-Npf0UkvnBIUX6ZmOcMYI7q2QGyKk1snBwo7mrRtwoRC60KAbD4cZKDM5WGxA7Yt3cyWkpjITxzeT8g1si~8PVEodKpmUnSmTwVbmqvi3M-bUij3mQ~ege0WxKjLEVrI~a3DX9uaREgX8dxH~Mgedrfm8m9WI3cEYiIEQLVN6vScYN6SVHDfp1MocqijiIRIDA6mQgVYahNLora~Rq9n2ruNC2gPfXlQxCGmjTcKScBeQ__', rating: 4 },
-        { id: '2', title: 'Course 2', image: 'https://s3-alpha-sig.figma.com/img/4e19/2fb7/d2883bc94d7779c24d4c27b60d015331?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=k5V5nwx7SQIWNaTOouhkDuM05Jo6ePcxq4g5yY5LKlN2AxLQx4W06Hy9~-zkyY0Rm~yRquH64NvDlaXB425VXXv1sFA-D0Ou02s9tmzco-Npf0UkvnBIUX6ZmOcMYI7q2QGyKk1snBwo7mrRtwoRC60KAbD4cZKDM5WGxA7Yt3cyWkpjITxzeT8g1si~8PVEodKpmUnSmTwVbmqvi3M-bUij3mQ~ege0WxKjLEVrI~a3DX9uaREgX8dxH~Mgedrfm8m9WI3cEYiIEQLVN6vScYN6SVHDfp1MocqijiIRIDA6mQgVYahNLora~Rq9n2ruNC2gPfXlQxCGmjTcKScBeQ__', rating: 5 },
-        { id: '3', title: 'Course 3', image: 'https://s3-alpha-sig.figma.com/img/4e19/2fb7/d2883bc94d7779c24d4c27b60d015331?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=k5V5nwx7SQIWNaTOouhkDuM05Jo6ePcxq4g5yY5LKlN2AxLQx4W06Hy9~-zkyY0Rm~yRquH64NvDlaXB425VXXv1sFA-D0Ou02s9tmzco-Npf0UkvnBIUX6ZmOcMYI7q2QGyKk1snBwo7mrRtwoRC60KAbD4cZKDM5WGxA7Yt3cyWkpjITxzeT8g1si~8PVEodKpmUnSmTwVbmqvi3M-bUij3mQ~ege0WxKjLEVrI~a3DX9uaREgX8dxH~Mgedrfm8m9WI3cEYiIEQLVN6vScYN6SVHDfp1MocqijiIRIDA6mQgVYahNLora~Rq9n2ruNC2gPfXlQxCGmjTcKScBeQ__', rating: 5 },
-        { id: '4', title: 'Course 4', image: 'https://s3-alpha-sig.figma.com/img/4e19/2fb7/d2883bc94d7779c24d4c27b60d015331?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=k5V5nwx7SQIWNaTOouhkDuM05Jo6ePcxq4g5yY5LKlN2AxLQx4W06Hy9~-zkyY0Rm~yRquH64NvDlaXB425VXXv1sFA-D0Ou02s9tmzco-Npf0UkvnBIUX6ZmOcMYI7q2QGyKk1snBwo7mrRtwoRC60KAbD4cZKDM5WGxA7Yt3cyWkpjITxzeT8g1si~8PVEodKpmUnSmTwVbmqvi3M-bUij3mQ~ege0WxKjLEVrI~a3DX9uaREgX8dxH~Mgedrfm8m9WI3cEYiIEQLVN6vScYN6SVHDfp1MocqijiIRIDA6mQgVYahNLora~Rq9n2ruNC2gPfXlQxCGmjTcKScBeQ__', rating: 5 },
-        { id: '5', title: 'Course 5', image: 'https://s3-alpha-sig.figma.com/img/4e19/2fb7/d2883bc94d7779c24d4c27b60d015331?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=k5V5nwx7SQIWNaTOouhkDuM05Jo6ePcxq4g5yY5LKlN2AxLQx4W06Hy9~-zkyY0Rm~yRquH64NvDlaXB425VXXv1sFA-D0Ou02s9tmzco-Npf0UkvnBIUX6ZmOcMYI7q2QGyKk1snBwo7mrRtwoRC60KAbD4cZKDM5WGxA7Yt3cyWkpjITxzeT8g1si~8PVEodKpmUnSmTwVbmqvi3M-bUij3mQ~ege0WxKjLEVrI~a3DX9uaREgX8dxH~Mgedrfm8m9WI3cEYiIEQLVN6vScYN6SVHDfp1MocqijiIRIDA6mQgVYahNLora~Rq9n2ruNC2gPfXlQxCGmjTcKScBeQ__', rating: 2 },
-        { id: '6', title: 'Course 5', image: 'https://s3-alpha-sig.figma.com/img/4e19/2fb7/d2883bc94d7779c24d4c27b60d015331?Expires=1733097600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=k5V5nwx7SQIWNaTOouhkDuM05Jo6ePcxq4g5yY5LKlN2AxLQx4W06Hy9~-zkyY0Rm~yRquH64NvDlaXB425VXXv1sFA-D0Ou02s9tmzco-Npf0UkvnBIUX6ZmOcMYI7q2QGyKk1snBwo7mrRtwoRC60KAbD4cZKDM5WGxA7Yt3cyWkpjITxzeT8g1si~8PVEodKpmUnSmTwVbmqvi3M-bUij3mQ~ege0WxKjLEVrI~a3DX9uaREgX8dxH~Mgedrfm8m9WI3cEYiIEQLVN6vScYN6SVHDfp1MocqijiIRIDA6mQgVYahNLora~Rq9n2ruNC2gPfXlQxCGmjTcKScBeQ__', rating: 5 },
-      ],
+        { id: "4", title: "Chemistry  [2nd Secondary]", teacher: "Teacher Name", image: "https://png.pngtree.com/png-vector/20230915/ourmid/pngtree-chemical-tube-sticker-png-image_10083609.png", rating: 4 },
+     
+        { id: "1", title: "Arabic Language [2nd Secondary ]", teacher: "Teacher Name", image: "https://www.shareicon.net/data/128x128/2015/09/02/94618_arabic_512x512.png", rating: 4 },
+        { id: "2", title: "Mathematics[2nd Primary]", teacher: "Teacher Name", image: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Deus_mathematics.png", rating: 3 },
+        { id: "3", title: "English Language [2nd Primary]", teacher: "Teacher Name", image: "https://images.vexels.com/media/users/3/201997/isolated/lists/ea210d04b9b9a0c0b3f65da99c46c228-english-book-flat.png", rating: 5 },
+          { id: "18", title: "physics [2nd Secondary ]", teacher: "Teacher Name", image: "https://cdn-icons-png.flaticon.com/256/1467/1467187.png", rating: 4 },
+        { id: "6", title: "Science  [6th Primary]", teacher: "Teacher Name", image: "https://w7.pngwing.com/pngs/327/423/png-transparent-science-symbol-engineering-science-engineering-chemistry-sign-thumbnail.png", rating: 4 },
+        { id: "7", title: "English Language [3rd Primary]", teacher: "Teacher Name", image: "https://images.vexels.com/media/users/3/201997/isolated/lists/ea210d04b9b9a0c0b3f65da99c46c228-english-book-flat.png", rating: 5 },
+        { id: "8", title: "Introduction to Python [3rd Secondary ]", teacher: "Teacher Name", image: "https://img.icons8.com/?size=256&id=13441&format=png", rating: 3 },
+        { id: "9", title: "Science [5th Primary]", teacher: "Teacher Name", image: "https://png.pngtree.com/png-vector/20230915/ourmid/pngtree-chemical-tube-sticker-png-image_10083609.png", rating: 4 },
+        { id: "10", title: "English Language [2nd Secondary ]", teacher: "Teacher Name", image: "https://images.vexels.com/media/users/3/201997/isolated/lists/ea210d04b9b9a0c0b3f65da99c46c228-english-book-flat.png", rating: 4 },
+        { id: "11", title: "physics [3rd Secondary ]", teacher: "Teacher Name", image: "https://cdn-icons-png.flaticon.com/256/1467/1467187.png", rating: 4 },
+        { id: "12", title: "physics [2nd Secondary ]", teacher: "Teacher Name", image: "https://cdn-icons-png.flaticon.com/256/1467/1467187.png", rating: 4 },
+        { id: "13", title: "English Language [3rd Primary]", teacher: "Teacher Name", image: "https://images.vexels.com/media/users/3/201997/isolated/lists/ea210d04b9b9a0c0b3f65da99c46c228-english-book-flat.png", rating: 5 },
+        { id: "14", title: "Introduction to Python [3rd Secondary ]", teacher: "Teacher Name", image: "https://img.icons8.com/?size=256&id=13441&format=png", rating: 3 },
+        { id: "15", title: "Science [4th Primary]", teacher: "Teacher Name", image: "https://png.pngtree.com/png-vector/20230915/ourmid/pngtree-chemical-tube-sticker-png-image_10083609.png", rating: 4 },
+        { id: "16", title: "English Language [2nd Secondary ]", teacher: "Teacher Name", image: "https://images.vexels.com/media/users/3/201997/isolated/lists/ea210d04b9b9a0c0b3f65da99c46c228-english-book-flat.png", rating: 4 },
+        { id: "17", title: "physics [3rd Secondary ]", teacher: "Teacher Name", image: "https://cdn-icons-png.flaticon.com/256/1467/1467187.png", rating: 4 },
+       ],
       renderItem: ({ item }) => (
         <View style={styles.allcourseCard}>
           <View style ={styles.imageVeiw}>
@@ -502,7 +519,7 @@ imageVeiw:{
 alignContent :'center'
 },
   courseImage: {
-    width: 83,
+    width:92,
     height: 92,
     padding: 10,
     backgroundColor: "#E5FCFF",

@@ -14,9 +14,21 @@ const AboutUs = () => {
       </View>
 
       <View style={styles.content}>
-        <Text style={styles.text}>We are a dedicated team focused on building a seamless school management system using the latest technologies like React Native. Our goal is to provide a platform that simplifies school operations for both teachers and students.</Text>
-        <Text style={styles.text}>Our mission is to make education more accessible and efficient through innovative solutions, improving the learning experience for all.</Text>
-      </View>
+        <Text style={styles.text}>School is a place where students go to learn and develop a variety of skills and knowledge.
+It typically includes a range of subjects such as math, science, literature, and social studies.
+Students are often divided into grades or year levels based on their age and academic progress.
+Teachers play a crucial role in guiding and inspiring students.</Text>
+        <Text>Our mission is to make education more accessible and efficient through innovative solutions, improving the learning experience for all.</Text>
+    
+      <Text style={styles.text}>
+      The history of school is a fascinating journey through different cultures and eras. Here’s a brief overview:
+      Ancient Civilizations: The concept of formal education dates back to ancient civilizations like Egypt, Greece, and China. In Egypt.
+        </Text>
+        
+        <Text style={styles.text}>
+        Abou Al Hool Al Seiahi, Nazlet El-Semman, Al Haram, Giza Governorate 12557
+        </Text>
+        </View>
     </ScrollView>
   );
 };

@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import * as Font from 'expo-font'; 
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 const { width, height } = Dimensions.get('window');
+import { Alert } from 'react-native';
 const guidelineBaseWidth = 350;
 const guidelineBaseHeight = 680;
 
@@ -29,10 +30,23 @@ export default function Login() {
     loadFonts();
   }, []);
 
+  // const handelSignin = () => {
+  //   router.replace('../(tabs)/home');
+  // };
   const handelSignin = () => {
-    router.replace('../(tabs)/home');
+    const validEmail = "Yasmeen@gmail.com"; 
+    const validPassword = "234567";   
+  
+    if (email === validEmail && password === validPassword) {
+      router.replace('../(tabs)/home'); 
+    } else {
+      Alert.alert(
+        "Error",
+        "Incorrect username or password. Please try again.",
+        [{ text: "OK", style: "cancel" }]
+      );
+    }
   };
-
   
   const handellock = () => {
     setShowPassword(!showPassword); 
